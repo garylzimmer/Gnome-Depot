@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compendium version="x">
+  <item>
+		<name>Adamantine Chain Mail</name>
+		<description>This suit of armor is reinforced with adamantine, one of the hardest substances in existence. While you're wearing it, any critical hit against you becomes a normal hit</description>
+		<rarity>Uncommon</rarity>
+		<price>500</price>
+		<type>HA</type>
+		<weight>55</weight>
+		<ac>16</ac>
+		<ref>DMG: pg150</ref>
+	</item>
+	<item>
+		<name>Potion of Healing</name>
+		<rarity>Common</rarity>
+		<description>You regain (2d4+2) hit points when you drink this potion. The potion's red liquid glimmers when agitated.</description>
+		
+		<price>50</price>
+		<type>Potion</type>
+		<weight>1</weight>
+		<ref>SRD: pg237</ref>
+	</item>
+	<item>
+		<name>Adamantine Armor</name>
+		<rarity>Uncommon</rarity>
+		<description>This suit of armor is reinforced with adamantine, one of the hardest substances in existence. While you’re wearing it, any critical hit against you becomes a normal hit.</description>
+		<price>500</price>
+		<type>Medium or Heavy Armor, but not Hide</type>
+		<weight>~50</weight>
+		<ref>SRD</ref>
+	</item>
+</compendium>
