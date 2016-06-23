@@ -38,16 +38,16 @@
             this.storeRarityCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.storeBox = new System.Windows.Forms.GroupBox();
             this.scGridView = new System.Windows.Forms.DataGridView();
-            this.scBox = new System.Windows.Forms.GroupBox();
-            this.FilePathTextBox = new System.Windows.Forms.TextBox();
-            this.ReadXMLButton = new System.Windows.Forms.Button();
-            this.randomizeQty = new System.Windows.Forms.Button();
             this.scReturnCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.scQuantityCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.scItemNameCol = new System.Windows.Forms.DataGridViewLinkColumn();
             this.scDescriptionCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.scPriceCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.scRarityCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.scBox = new System.Windows.Forms.GroupBox();
+            this.FilePathTextBox = new System.Windows.Forms.TextBox();
+            this.ReadXMLButton = new System.Windows.Forms.Button();
+            this.randomizeQty = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ItemDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.storeGridView)).BeginInit();
             this.storeBox.SuspendLayout();
@@ -127,14 +127,13 @@
             // storeBox
             // 
             this.storeBox.Controls.Add(this.storeGridView);
-            this.storeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.storeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.storeBox.Location = new System.Drawing.Point(746, 225);
             this.storeBox.Name = "storeBox";
             this.storeBox.Size = new System.Drawing.Size(544, 314);
             this.storeBox.TabIndex = 1;
             this.storeBox.TabStop = false;
             this.storeBox.Text = "Store Inventory";
-            this.storeBox.Enter += new System.EventHandler(this.storeBox_Enter);
             // 
             // scGridView
             // 
@@ -154,46 +153,6 @@
             this.scGridView.Size = new System.Drawing.Size(503, 289);
             this.scGridView.TabIndex = 2;
             this.scGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.scGridView_CellContentClick);
-            // 
-            // scBox
-            // 
-            this.scBox.Controls.Add(this.scGridView);
-            this.scBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scBox.Location = new System.Drawing.Point(225, 225);
-            this.scBox.Name = "scBox";
-            this.scBox.Size = new System.Drawing.Size(515, 327);
-            this.scBox.TabIndex = 3;
-            this.scBox.TabStop = false;
-            this.scBox.Text = "Shopping Cart";
-            this.scBox.Enter += new System.EventHandler(this.scBox_Enter);
-            // 
-            // FilePathTextBox
-            // 
-            this.FilePathTextBox.Location = new System.Drawing.Point(843, 199);
-            this.FilePathTextBox.Name = "FilePathTextBox";
-            this.FilePathTextBox.Size = new System.Drawing.Size(438, 20);
-            this.FilePathTextBox.TabIndex = 4;
-            this.FilePathTextBox.Text = "File Path Here";
-            // 
-            // ReadXMLButton
-            // 
-            this.ReadXMLButton.Location = new System.Drawing.Point(66, 211);
-            this.ReadXMLButton.Name = "ReadXMLButton";
-            this.ReadXMLButton.Size = new System.Drawing.Size(133, 64);
-            this.ReadXMLButton.TabIndex = 5;
-            this.ReadXMLButton.Text = "Read XML";
-            this.ReadXMLButton.UseVisualStyleBackColor = true;
-            this.ReadXMLButton.Click += new System.EventHandler(this.ReadXMLButton_Click);
-            // 
-            // randomizeQty
-            // 
-            this.randomizeQty.Location = new System.Drawing.Point(66, 312);
-            this.randomizeQty.Name = "randomizeQty";
-            this.randomizeQty.Size = new System.Drawing.Size(133, 64);
-            this.randomizeQty.TabIndex = 6;
-            this.randomizeQty.Text = "Give Items Random Quantities";
-            this.randomizeQty.UseVisualStyleBackColor = true;
-            this.randomizeQty.Click += new System.EventHandler(this.randomizeQty_Click);
             // 
             // scReturnCol
             // 
@@ -234,6 +193,45 @@
             this.scRarityCol.Name = "scRarityCol";
             this.scRarityCol.ReadOnly = true;
             // 
+            // scBox
+            // 
+            this.scBox.Controls.Add(this.scGridView);
+            this.scBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scBox.Location = new System.Drawing.Point(225, 225);
+            this.scBox.Name = "scBox";
+            this.scBox.Size = new System.Drawing.Size(515, 327);
+            this.scBox.TabIndex = 3;
+            this.scBox.TabStop = false;
+            this.scBox.Text = "Shopping Cart";
+            // 
+            // FilePathTextBox
+            // 
+            this.FilePathTextBox.Location = new System.Drawing.Point(843, 199);
+            this.FilePathTextBox.Name = "FilePathTextBox";
+            this.FilePathTextBox.Size = new System.Drawing.Size(438, 20);
+            this.FilePathTextBox.TabIndex = 4;
+            this.FilePathTextBox.Text = "File Path Here";
+            // 
+            // ReadXMLButton
+            // 
+            this.ReadXMLButton.Location = new System.Drawing.Point(66, 211);
+            this.ReadXMLButton.Name = "ReadXMLButton";
+            this.ReadXMLButton.Size = new System.Drawing.Size(133, 64);
+            this.ReadXMLButton.TabIndex = 5;
+            this.ReadXMLButton.Text = "Read XML";
+            this.ReadXMLButton.UseVisualStyleBackColor = true;
+            this.ReadXMLButton.Click += new System.EventHandler(this.ReadXMLButton_Click);
+            // 
+            // randomizeQty
+            // 
+            this.randomizeQty.Location = new System.Drawing.Point(66, 312);
+            this.randomizeQty.Name = "randomizeQty";
+            this.randomizeQty.Size = new System.Drawing.Size(133, 64);
+            this.randomizeQty.TabIndex = 6;
+            this.randomizeQty.Text = "Give Items Random Quantities";
+            this.randomizeQty.UseVisualStyleBackColor = true;
+            this.randomizeQty.Click += new System.EventHandler(this.randomizeQty_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -246,7 +244,6 @@
             this.Controls.Add(this.scBox);
             this.Name = "MainWindow";
             this.Text = "RPG Magic Item Shop";
-            this.Load += new System.EventHandler(this.MainWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ItemDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.storeGridView)).EndInit();
             this.storeBox.ResumeLayout(false);

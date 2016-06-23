@@ -90,7 +90,7 @@ namespace Magic_Shop
                 ReadXMLButton.Enabled = false;
                 scGridView.AllowUserToAddRows = false;
                 scGridView.AutoGenerateColumns = false;
-
+                
                 //set all store item quantities to 0
                 for (int row = 0; row < storeGridView.Rows.Count; row++)
                 {
@@ -116,88 +116,103 @@ namespace Magic_Shop
         private void BuyItemFromStore(int storeItemRowNum)
         {
             string storeItemName = (string)storeGridView.Rows[storeItemRowNum].Cells["storeItemNameCol"].Value;
-            //take one from the quantiy
-            int storeItemQty = (int)storeGridView.Rows[storeItemRowNum].Cells["storeQuantityCol"].Value;
-            storeItemQty--;
-            string boughtItemMsg = "You have purchased 1 " + storeItemName + ". There is/are " + storeItemQty + "remaining.";
-            System.Windows.Forms.MessageBox.Show(boughtItemMsg);
-            storeGridView.Rows[storeItemRowNum].Cells["storeQuantityCol"].Value = storeItemQty;
-            //hide row if qty <= 0
-            if (storeItemQty <= 0)
-            {
-                storeGridView.CurrentCell = null;
-                storeGridView.Rows[storeItemRowNum].Visible = false;
-            }
-            //add to shopping cart
+            string searchedSCItemName = "place holder";
+            int scRow = 0;
 
-            //first check if any same named items are in SC
-            for (int row = 0; row < scGridView.Rows.Count; row++)
+            if (scGridView.CurrentCell != null)
             {
-                if (storeItemName == (string)scGridView.Rows[row].Cells["scItemNameCol"].Value)
+                for (scRow = 0; scGridView.Rows[scRow]; scRow++)
                 {
-                    int dupeQty = (int)scGridView[1, row].Value;
-                    dupeQty++;
-                    scGridView[1, row].Value = dupeQty;
-                    System.Windows.Forms.MessageBox.Show("Duplicate Loop");
+                    //store the name of the item in the iterated row
 
-                    return;
+                    System.Windows.Forms.MessageBox.Show("Searching for " + searchedSCItemName);
+
+
+                }
+                //check if we already have an item with that name in shopping cart
+                if (storeItemName.Equals(searchedSCItemName))
+                {
+                    //if we do, tell us about the match
+                    System.Windows.Forms.MessageBox.Show("Found that: Store's " + storeItemName + " matches Shopping Cart's " + searchedSCItemName);
+                    //now that we know that the item appears in both the store and the shopping cart
+
+                    //find the quantity that we already have in the shopping cart of that item
+                    int scItemQty = (int)scGridView.Rows[scRow].Cells["scQuantityCol"].Value;
+                    //increment the quantity
+                    scItemQty++;
+                    //update the quantity
+                    scGridView.Rows[scRow].Cells["scQuantityCol"].Value = scItemQty;
+
+                }
+                System.Windows.Forms.MessageBox.Show("Did not find that item in the shopping cart");
+                //if we don't find the bought item from the store in the shopping cart...
+                //make new row variable that clones the store item's row
+                DataGridViewRow newSCRow = CloneWithValues(storeGridView.Rows[storeItemRowNum]);
+                //add that row to the end of the shopping cart table
+                scGridView.Rows.Add(newSCRow);
+                //set the qty of that item's row to 1
+                scGridView[1, scGridView.RowCount - 1].Value = 1;
+                //find the qty of the item in the store
+                System.Windows.Forms.MessageBox.Show("Passed the for and if else loops");
+                int storeItemQty = (int)storeGridView.Rows[storeItemRowNum].Cells["storeQuantityCol"].Value;
+                //decrement it
+                storeItemQty--;
+                //update qty
+                storeGridView.Rows[storeItemRowNum].Cells["storeQuantityCol"].Value = storeItemQty;
+
+                if (storeItemQty <= 0)
+                {
+                    storeGridView.CurrentCell = null;
+                    storeGridView.Rows[storeItemRowNum].Visible = false;
                 }
             }
-
-            System.Windows.Forms.MessageBox.Show("No Dupe Loop");
-
-            DataGridViewRow newSCRow = CloneWithValues(storeGridView.Rows[storeItemRowNum]);
-            scGridView.Rows.Add(newSCRow);
-            scGridView[1, scGridView.RowCount - 1].Value = 1;
-            return;
-            //string[] newrow = new string[] { "return", "qty", "item text", "item descript" };
-            //scGridView.Rows.Add(newrow);
-
-            //this is all assuming that the added row is unique and is therefore added to the end of the list
-
-
         }
-
-        private void ReturnItemToStore(int scItemRowNum)
+        private void ReturnItemToStore(string scItemName)
         {
-            //get sc item name from row number
-            object scItemName = scGridView.Rows[scItemRowNum].Cells["scItemNameCol"].Value;
-            System.Windows.Forms.MessageBox.Show("You have returned " + scItemName + " to the shop inventory.");
-            int scItemQty = (int)scGridView.Rows[scItemRowNum].Cells["scQuantityCol"].Value;
-            //decrement sc item qty
-            scItemQty--;
-            //update sc item qty in list
-            scGridView.Rows[scItemRowNum].Cells["scQuantityCol"].Value = scItemQty;
-            //check if sc item qty is <=0, if so remove row
-            if (scItemQty <= 0)
+            //iterate through the store's rows
+            for (int storeRow = 0; storeRow<storeGridView.Rows.Count; storeRow++)
             {
-                scGridView.Rows.RemoveAt(scItemRowNum);
-            }
-            //check if returned item matches any items in the store list,
-            //if so, increment matched store item qty
-            //else add row from SC back to store and make qty = 1
-            for (int row = 0; row < storeGridView.Rows.Count; row++)
-            {
-                if (scItemName == (string)storeGridView.Rows[row].Cells["storeItemNameCol"].Value)
+                //store the iterated row's item name
+                string searchedStoreItemName = (string) storeGridView.Rows[storeRow].Cells["storeItemNameCol"].Value;
+                if(scItemName.Equals(searchedStoreItemName))
                 {
-                    int dupeQty = (int)storeGridView[1, row].Value;
-                    dupeQty++;
-                    scGridView[1, row].Value = dupeQty;
-                    return;
-                }
-                else
-                {
-                    DataGridViewRow newStoreRow = CloneWithValues(scGridView.Rows[scItemRowNum]);
-                    storeGridView.Rows.Add(newStoreRow);
-                    storeGridView[1, storeGridView.RowCount - 1].Value = 1;
-                    return;
-                }
-            }
-            if (scItemQty <= 0)
-            {
-                scGridView.Rows.RemoveAt(scItemRowNum);
-            }
+                    System.Windows.Forms.MessageBox.Show("Found that: Shopping Cart's " + scItemName + " matches Store's " + searchedStoreItemName);
+                    //get row for the found store item based on iterated row and item name col
+                    int foundStoreItemRowIndex = storeGridView.Rows[storeRow].Cells["storeItemNameCol"].RowIndex;
+                    
+                    //get int qty of found store item based on above and quantity col
+                    int foundStoreItemQty = (int)storeGridView.Rows[foundStoreItemRowIndex].Cells["storeQuantityCol"].Value;
+                    //increment store item qty value
+                    foundStoreItemQty++;
+                    //update store item qty value
+                    storeGridView.Rows[foundStoreItemRowIndex].Cells["storeQuantityCol"].Value = foundStoreItemQty;
+                    storeGridView.Rows[storeRow].Visible = true;
 
+                    //find row of the sc item
+                    for (int scRow = 0; scRow < scGridView.Rows.Count; scRow++)
+                    {
+                        if (scItemName.Equals(scGridView.Rows[scRow].Cells["scItemNameCol"].Value))
+                        {
+                            //from scRow, get the quantity of the item
+                            int scItemQty = (int)scGridView.Rows[scRow].Cells["scQuantityCol"].Value;
+                            //decrement qty
+                            scItemQty--;
+                            //update qty in cell
+                            scGridView.Rows[scRow].Cells["scQuantityCol"].Value = scItemQty;
+
+                            //hide scRow if qty <=0
+                            if(scItemQty<=0)
+                            {
+                                scGridView.CurrentCell = null;
+                                scGridView.Rows[scRow].Visible = false;
+                            }
+
+                            
+                        }
+                    }
+                }
+
+            }
 
         }
         //clicking on store button or item name for descript method
@@ -253,15 +268,15 @@ namespace Magic_Shop
 
             if(e.RowIndex<0)
                 return;
-            if (clickedColName == "scItemNameCol")
+            else if (clickedColName == "scItemNameCol")
             {
                 string clickedItemDescrip = (string)scGridView.Rows[e.RowIndex].Cells["scDescriptionCol"].Value;
                 System.Windows.Forms.MessageBox.Show(clickedItemDescrip);
             }
-            if (clickedColName == "scReturnCol")
+            else if (clickedColName == "scReturnCol")
             {
-                int scReturnItemRowNum = storeGridView.Columns[e.RowIndex].Index;
-                ReturnItemToStore(scReturnItemRowNum);
+                string scReturnItemName = (string)scGridView.Rows[e.RowIndex].Cells["scItemNameCol"].Value;
+                ReturnItemToStore(scReturnItemName);
             }
 
             else
@@ -269,20 +284,6 @@ namespace Magic_Shop
 
         }
 
-        private void MainWindow_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void storeBox_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void scBox_Enter(object sender, EventArgs e)
-        {
-
-        }
     }
 
 
