@@ -115,57 +115,47 @@ namespace Magic_Shop
 
         private void BuyItemFromStore(int storeItemRowNum)
         {
-            string storeItemName = (string)storeGridView.Rows[storeItemRowNum].Cells["storeItemNameCol"].Value;
-            string searchedSCItemName = "place holder";
-            int scRow = 0;
-
-            if (scGridView.CurrentCell != null)
+            //find the name of the item in that row
+        	string storeItemName = (string)storeGridView.Rows[storeItemRowNum].Cells["storeItemNameCol"].Value;
+			//find the qty of the item in that row
+        	int storeItemQty = (int)storeGridView.Rows[storeItemRowNum].Cells["storeQuantityCol"].Value;
+			//decrement the qty of the item
+        	storeItemQty--;
+        	//update the qty in the row
+        
+            storeGridView.Rows[storeItemRowNum].Cells["storeQuantityCol"].Value = storeItemQty;
+           
+            if(scGridView.Rows[0]==null) //if shopping cart is empty
             {
-                for (scRow = 0; scGridView.Rows[scRow]; scRow++)
-                {
-                    //store the name of the item in the iterated row
-
-                    System.Windows.Forms.MessageBox.Show("Searching for " + searchedSCItemName);
-
-
-                }
-                //check if we already have an item with that name in shopping cart
-                if (storeItemName.Equals(searchedSCItemName))
-                {
-                    //if we do, tell us about the match
-                    System.Windows.Forms.MessageBox.Show("Found that: Store's " + storeItemName + " matches Shopping Cart's " + searchedSCItemName);
-                    //now that we know that the item appears in both the store and the shopping cart
-
-                    //find the quantity that we already have in the shopping cart of that item
-                    int scItemQty = (int)scGridView.Rows[scRow].Cells["scQuantityCol"].Value;
-                    //increment the quantity
-                    scItemQty++;
-                    //update the quantity
-                    scGridView.Rows[scRow].Cells["scQuantityCol"].Value = scItemQty;
-
-                }
-                System.Windows.Forms.MessageBox.Show("Did not find that item in the shopping cart");
-                //if we don't find the bought item from the store in the shopping cart...
-                //make new row variable that clones the store item's row
-                DataGridViewRow newSCRow = CloneWithValues(storeGridView.Rows[storeItemRowNum]);
-                //add that row to the end of the shopping cart table
-                scGridView.Rows.Add(newSCRow);
-                //set the qty of that item's row to 1
-                scGridView[1, scGridView.RowCount - 1].Value = 1;
-                //find the qty of the item in the store
-                System.Windows.Forms.MessageBox.Show("Passed the for and if else loops");
-                int storeItemQty = (int)storeGridView.Rows[storeItemRowNum].Cells["storeQuantityCol"].Value;
-                //decrement it
-                storeItemQty--;
-                //update qty
-                storeGridView.Rows[storeItemRowNum].Cells["storeQuantityCol"].Value = storeItemQty;
-
-                if (storeItemQty <= 0)
-                {
-                    storeGridView.CurrentCell = null;
-                    storeGridView.Rows[storeItemRowNum].Visible = false;
-                }
+            	//BuyFirstItem(storeItemRowNum);
+            	//HideRowIfZero(storeItemRowNum);
+            	return;
             }
+            else //shopping cart not empty
+            {
+            	//iterate through the table
+            	//initialize the index where a duplicate MIGHT be found
+            	int cartItemDuplicateIndex = -1;
+            	for(int i = 0; i<scGridView.Rows.Count; i++;)
+            	{
+            		if(storeItemName.Equals(scGridView.Rows[i].Cells["scItemNameCol"].Value)
+            		   {
+            		   	cartItemDuplicateIndex = i;
+            		   }
+            	}
+            	if(cartItemDuplicateIndex > -1) //cart not empty, item is a dupe
+            	{
+            		   	//add 1 to the qty of cartItemDuplicateIndex's qty
+            		   	//HideRowIfZero(storeItemRowNum);
+            		   	return;
+            	}
+	            //shopping cart not empty but did not find duplicate
+	            
+	            		//BuyFirstItem(storeItemRowNum);
+	            		//HideRowIfZero(storeItemRow);
+	            		return;
+            }
+
         }
         private void ReturnItemToStore(string scItemName)
         {
