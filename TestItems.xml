@@ -1,25 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <compendium version="x">
-  <item>
-		<name>Adamantine Chain Mail</name>
-		<description>This suit of armor is reinforced with adamantine, one of the hardest substances in existence. While you're wearing it, any critical hit against you becomes a normal hit</description>
-		<rarity>Uncommon</rarity>
-		<price>500</price>
-		<type>HA</type>
-		<weight>55</weight>
-		<ac>16</ac>
-		<ref>DMG: pg150</ref>
-	</item>
-	<item>
-		<name>Potion of Healing</name>
-		<rarity>Common</rarity>
-		<description>You regain (2d4+2) hit points when you drink this potion. The potion's red liquid glimmers when agitated.</description>
-		
-		<price>50</price>
-		<type>Potion</type>
-		<weight>1</weight>
-		<ref>SRD: pg237</ref>
-	</item>
 	<item>
 		<name>Adamantine Armor</name>
 		<rarity>Uncommon</rarity>
@@ -27,6 +7,51 @@
 		<price>500</price>
 		<type>Medium or Heavy Armor, but not Hide</type>
 		<weight>~50</weight>
+		<ref>SRD</ref>
+	</item>
+	<item>
+		<name>Animated Shield</name>
+		<rarity>Very Rare</rarity>
+		<description>While holding this shield, you can speak its command word as a bonus action to cause it to animate. The shield leaps into the air and hovers in your space to protect you as if you were wielding it, leaving your hands free. The shield remains animated for 1 minute, until you use a bonus action to end this effect, or until you are incapacitated or die, at which point the shield falls to the ground or into your hand if you have one free.</description>
+		<price>6000</price>
+		<type>Armor (shield), Requires Attunement</type>
+		<weight>idk</weight>
+		<ref>SRD</ref>
+	</item>
+	<item>
+		<name>Potion of Healing</name>
+		<rarity>Common</rarity>
+		<description>You regain (2d4+2) hit points when you drink this potion. The potion's red liquid glimmers when agitated.</description>
+		<price>50</price>
+		<type>Potion</type>
+		<weight>1</weight>
+		<ref>SRD: pg237</ref>
+	</item>
+	<item>
+		<name>Potion of Greater Healing</name>
+		<rarity>Uncommon</rarity>
+		<description>You regain (4d4+2) hit points when you drink this potion. The potion's red liquid glimmers when agitated.</description>
+		<price>150</price>
+		<type>Potion</type>
+		<weight>1</weight>
+		<ref>SRD</ref>
+	</item>
+	<item>
+		<name>Potion of Superior Healing</name>
+		<rarity>Rare</rarity>
+		<description>You regain (8d4+8) hit points when you drink this potion. The potion's red liquid glimmers when agitated.</description>
+		<price>450</price>
+		<type>Potion</type>
+		<weight>1</weight>
+		<ref>SRD</ref>
+	</item>
+	<item>
+		<name>Potion of Supreme Healing</name>
+		<rarity>Very Rare</rarity>
+		<description>You regain (10d4+20) hit points when you drink this potion. The potion's red liquid glimmers when agitated.</description>
+		<price>1350</price>
+		<type>Potion</type>
+		<weight>1</weight>
 		<ref>SRD</ref>
 	</item>
 </compendium>
