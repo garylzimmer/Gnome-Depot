@@ -61,11 +61,37 @@ namespace Magic_Shop
                 return Qty;
             }
 
-            if (Rarity == "Uncommon")
+            else if (Rarity == "Uncommon")
             {
 
                 int Qty = rndQty.Next(0, 5);
                 return Qty;
+            }
+            else if (Rarity == "Rare")
+            {
+                int Qty = rndQty.Next(0, 2);
+                return Qty;
+
+            }
+            else if (Rarity == "Very Rare")
+            {
+                int dropRate = rndQty.Next(1, 11);
+                if (dropRate == 10)
+                {
+                    return 1;
+
+                }
+                else return 0;
+
+            }
+            else if (Rarity == "Legendary")
+            {
+                int dropRate = rndQty.Next(1, 51);
+                if (dropRate == 50)
+                {
+                    return 1;
+                }
+                else return 0;
             }
             else
                 return 0;
@@ -111,109 +137,112 @@ namespace Magic_Shop
             }
             return clonedRow;
         }
+        
+        public void BuyFirstItem(int storeItemRowNum)
+        {
+        	DataGridViewRow tempRow = (DataGridViewRow) CloneWithValues(storeGridView.Rows[storeItemRowNum]);
+            scGridView.Rows.Add(tempRow);
+        	scGridView.Rows[scGridView.RowCount - 1].Cells["scQuantityCol"].Value = 1;
+        	return;
+        }
+        
+        public void HideRowIfZero(int itemRowNum)
+        {
+        	if((int)storeGridView.Rows[itemRowNum].Cells["storeQuantityCol"].Value <= 0)
+        	{
+                storeGridView.CurrentCell = null;
+                storeGridView.Rows[itemRowNum].Visible = false;
+        	}
+        }
 
 
         private void BuyItemFromStore(int storeItemRowNum)
         {
-            string storeItemName = (string)storeGridView.Rows[storeItemRowNum].Cells["storeItemNameCol"].Value;
-            string searchedSCItemName = "place holder";
-            int scRow = 0;
-
-            if (scGridView.CurrentCell != null)
+            //find the name of the item in that row
+        	string storeItemName = (string)storeGridView.Rows[storeItemRowNum].Cells["storeItemNameCol"].Value;
+			//find the qty of the item in that row
+        	int storeItemQty = (int)storeGridView.Rows[storeItemRowNum].Cells["storeQuantityCol"].Value;
+			//decrement the qty of the item
+        	storeItemQty--;
+        	//update the qty in the row
+        
+            storeGridView.Rows[storeItemRowNum].Cells["storeQuantityCol"].Value = storeItemQty;
+           
+            if(scGridView.RowCount==0) //if shopping cart is empty
             {
-                for (scRow = 0; scGridView.Rows[scRow]; scRow++)
-                {
-                    //store the name of the item in the iterated row
-
-                    System.Windows.Forms.MessageBox.Show("Searching for " + searchedSCItemName);
-
-
-                }
-                //check if we already have an item with that name in shopping cart
-                if (storeItemName.Equals(searchedSCItemName))
-                {
-                    //if we do, tell us about the match
-                    System.Windows.Forms.MessageBox.Show("Found that: Store's " + storeItemName + " matches Shopping Cart's " + searchedSCItemName);
-                    //now that we know that the item appears in both the store and the shopping cart
-
-                    //find the quantity that we already have in the shopping cart of that item
-                    int scItemQty = (int)scGridView.Rows[scRow].Cells["scQuantityCol"].Value;
-                    //increment the quantity
-                    scItemQty++;
-                    //update the quantity
-                    scGridView.Rows[scRow].Cells["scQuantityCol"].Value = scItemQty;
-
-                }
-                System.Windows.Forms.MessageBox.Show("Did not find that item in the shopping cart");
-                //if we don't find the bought item from the store in the shopping cart...
-                //make new row variable that clones the store item's row
-                DataGridViewRow newSCRow = CloneWithValues(storeGridView.Rows[storeItemRowNum]);
-                //add that row to the end of the shopping cart table
-                scGridView.Rows.Add(newSCRow);
-                //set the qty of that item's row to 1
-                scGridView[1, scGridView.RowCount - 1].Value = 1;
-                //find the qty of the item in the store
-                System.Windows.Forms.MessageBox.Show("Passed the for and if else loops");
-                int storeItemQty = (int)storeGridView.Rows[storeItemRowNum].Cells["storeQuantityCol"].Value;
-                //decrement it
-                storeItemQty--;
-                //update qty
-                storeGridView.Rows[storeItemRowNum].Cells["storeQuantityCol"].Value = storeItemQty;
-
-                if (storeItemQty <= 0)
-                {
-                    storeGridView.CurrentCell = null;
-                    storeGridView.Rows[storeItemRowNum].Visible = false;
-                }
+            	BuyFirstItem(storeItemRowNum);
+            	HideRowIfZero(storeItemRowNum);
+            	return;
             }
+            else //shopping cart not empty
+            {
+            	//iterate through the table
+            	//initialize the index where a duplicate MIGHT be found
+            	int cartItemDuplicateIndex = -1;
+            	for(int i = 0; i<scGridView.Rows.Count; i++)
+            	{
+            		if(storeItemName.Equals(scGridView.Rows[i].Cells["scItemNameCol"].Value))
+            		   {
+            		   	//use var to find the index of the possible dupe
+            		   	cartItemDuplicateIndex = i;
+            		   }
+            	}
+            	if(cartItemDuplicateIndex > -1) //cart not empty, item is a dupe
+            	{
+                    //add 1 to the qty of cartItemDuplicateIndex's qty
+                    int DupeItemQty = (int)scGridView.Rows[cartItemDuplicateIndex].Cells["scQuantityCol"].Value;
+                    DupeItemQty++;
+                    scGridView.Rows[cartItemDuplicateIndex].Cells["scQuantityCol"].Value = DupeItemQty;
+                    HideRowIfZero(storeItemRowNum);
+            		   	return;
+            	}
+	            //shopping cart not empty but did not find duplicate
+	            
+	            		BuyFirstItem(storeItemRowNum);
+	            		HideRowIfZero(storeItemRowNum);
+	            		return;
+            }
+
         }
-        private void ReturnItemToStore(string scItemName)
+        private void ReturnItemToStore(int scItemRowNum)
         {
-            //iterate through the store's rows
-            for (int storeRow = 0; storeRow<storeGridView.Rows.Count; storeRow++)
+        	//find the name of the item in the store's item row
+        	string scItemName = (string)scGridView.Rows[scItemRowNum].Cells["scItemNameCol"].Value;
+        	//find qty of of the item in the store's item row
+        	int scItemQty = (int)scGridView.Rows[scItemRowNum].Cells["scQuantityCol"].Value;
+        	//decrement qty
+        	scItemQty--;
+        	//update qty
+        	scGridView.Rows[scItemRowNum].Cells["scQuantityCol"].Value = scItemQty;
+       		//HideRowIfZero(scItemRowNum);
+        	
+        	//initialize dupe check index
+        	int storeDupeIndex = -1;
+        	//iterate through the store to look for duplicates
+        	for(int i = 0; i<storeGridView.Rows.Count; i++)
+        	{
+        		if(scItemName.Equals(storeGridView.Rows[i].Cells["storeItemNameCol"].Value))
+        		{
+        			storeDupeIndex = i;
+        		}
+        	}
+        	
+        	if(storeDupeIndex > -1)
+        	{
+        		//add 1 to the qty of storeDupeIndex's qty
+        		int storeDupeQty = (int) storeGridView.Rows[storeDupeIndex].Cells["storeQuantityCol"].Value;
+        		storeDupeQty++;
+        		storeGridView.Rows[storeDupeIndex].Cells["storeQuantityCol"].Value = storeDupeQty;
+        		storeGridView.Rows[storeDupeIndex].Visible = true;
+        	}
+        	else //returned item wasn't found in the store...
+        		//how'd you get here?
+        		return;
+            if ((int)scGridView.Rows[scItemRowNum].Cells["scQuantityCol"].Value <= 0)
             {
-                //store the iterated row's item name
-                string searchedStoreItemName = (string) storeGridView.Rows[storeRow].Cells["storeItemNameCol"].Value;
-                if(scItemName.Equals(searchedStoreItemName))
-                {
-                    System.Windows.Forms.MessageBox.Show("Found that: Shopping Cart's " + scItemName + " matches Store's " + searchedStoreItemName);
-                    //get row for the found store item based on iterated row and item name col
-                    int foundStoreItemRowIndex = storeGridView.Rows[storeRow].Cells["storeItemNameCol"].RowIndex;
-                    
-                    //get int qty of found store item based on above and quantity col
-                    int foundStoreItemQty = (int)storeGridView.Rows[foundStoreItemRowIndex].Cells["storeQuantityCol"].Value;
-                    //increment store item qty value
-                    foundStoreItemQty++;
-                    //update store item qty value
-                    storeGridView.Rows[foundStoreItemRowIndex].Cells["storeQuantityCol"].Value = foundStoreItemQty;
-                    storeGridView.Rows[storeRow].Visible = true;
-
-                    //find row of the sc item
-                    for (int scRow = 0; scRow < scGridView.Rows.Count; scRow++)
-                    {
-                        if (scItemName.Equals(scGridView.Rows[scRow].Cells["scItemNameCol"].Value))
-                        {
-                            //from scRow, get the quantity of the item
-                            int scItemQty = (int)scGridView.Rows[scRow].Cells["scQuantityCol"].Value;
-                            //decrement qty
-                            scItemQty--;
-                            //update qty in cell
-                            scGridView.Rows[scRow].Cells["scQuantityCol"].Value = scItemQty;
-
-                            //hide scRow if qty <=0
-                            if(scItemQty<=0)
-                            {
-                                scGridView.CurrentCell = null;
-                                scGridView.Rows[scRow].Visible = false;
-                            }
-
-                            
-                        }
-                    }
-                }
-
+                scGridView.CurrentCell = null;
+                scGridView.Rows.RemoveAt(scItemRowNum);
             }
-
         }
         //clicking on store button or item name for descript method
         private void storeGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -275,8 +304,7 @@ namespace Magic_Shop
             }
             else if (clickedColName == "scReturnCol")
             {
-                string scReturnItemName = (string)scGridView.Rows[e.RowIndex].Cells["scItemNameCol"].Value;
-                ReturnItemToStore(scReturnItemName);
+                ReturnItemToStore(e.RowIndex);
             }
 
             else
@@ -284,6 +312,47 @@ namespace Magic_Shop
 
         }
 
+        private void startingGPTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void calculateButton_Click(object sender, EventArgs e)
+        {
+            int totalInCart = 0;
+            int numOfSCRows = scGridView.RowCount;
+            for (int i = 0; i < numOfSCRows; i++)
+            {
+                int priceInRow = Int32.Parse(scGridView.Rows[i].Cells["scPriceCol"].Value.ToString());
+                int qtyInRow = Int32.Parse(scGridView.Rows[i].Cells["scQuantityCol"].Value.ToString());
+                int totalInRow = priceInRow * qtyInRow;
+                totalInCart += totalInRow;
+            }
+            scTotalTextBox.Text = totalInCart.ToString();
+            try
+            {
+                int endingGP = Int32.Parse(startingGPTextBox.Text) - totalInCart;
+                endingGPTextBox.Text = endingGP.ToString();
+                return;
+            }
+            catch (FormatException f)
+            {
+                System.Windows.Forms.MessageBox.Show("Please enter a number for \"Starting GP\"!:\n\n" + f);
+
+            }
+            
+            return;
+        }
+
+        private void MainWindow_Load(object sender, EventArgs e)
+        {
+            ReadXMLButton.PerformClick();
+        }
+
+        private void aboutLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/garylzimmer/Magic-Shop/");
+        }
     }
 
 
