@@ -6,28 +6,6 @@ Instead of actually working on my DnD campaign, I've been working on a program t
 
 Usage:
 
-    Open ReadingXML.exe
-    Click "Read XML" and point it to the XML file to populate the store with items.
-    Click "Randomize Quantities" to generate randomized quantities for the store items.
-
-
-
-Binary and Source:
-
-https://github.com/garylzimmer/Magic-Shop
-
-Instead of, you know, actually working on my campaign...
-
-I've been learning C# by making a simple store and shopping cart program for me to use in my campaign during shopping trips to the town.
-
-How to download?
-
-    Click the link above and download Magic Shop.exe
-    (You'll have to click on View Raw to get the download to start)
-    Also make sure you download the TestItems.xml in order to input some items
-
-How to use?
-
     Upon first opening, the program will ask for the XML file you should have downloaded.
     After that, click "Generate Shop" and the item quantities will fill out based on the item rarities
     Then you can start buying items!
