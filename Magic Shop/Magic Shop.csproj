@@ -49,6 +49,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditXML.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditXML.Designer.cs">
+      <DependentUpon>EditXML.cs</DependentUpon>
+    </Compile>
     <Compile Include="ShopWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +75,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditXML.resx">
+      <DependentUpon>EditXML.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ShopWindow.resx">
       <DependentUpon>ShopWindow.cs</DependentUpon>
     </EmbeddedResource>

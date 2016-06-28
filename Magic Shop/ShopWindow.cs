@@ -41,8 +41,10 @@ namespace Magic_Shop
             storeGridView.AllowUserToAddRows = false;
             scGridView.AllowUserToAddRows = false;
             scGridView.AutoGenerateColumns = false;
+			disabledPanel.Visible = true;
+			disabledPanel.Parent.Controls.SetChildIndex(disabledPanel,0);
 
-        }
+		}
 
         private string GetItemRarity(int RowNum)
         {
@@ -97,7 +99,7 @@ namespace Magic_Shop
                 return 0;
         }
 
-        private void ReadXMLButton_Click(object sender, EventArgs e)
+		public void ReadXML()
         {
             OpenFileDialog openXMLDialog = new OpenFileDialog();
             openXMLDialog.Filter = "XML File | *.xml";
@@ -107,13 +109,11 @@ namespace Magic_Shop
                 string sFileName = openXMLDialog.FileName;
 
 
-                //XMLfilePath = openXMLDialog.FileName;
                 FilePathTextBox.Text = sFileName;
                 ItemDataSet.ReadXml(sFileName);
                 storeGridView.AutoGenerateColumns = false;
                 storeGridView.DataSource = ItemDataSet;
                 storeGridView.DataMember = "item";
-                ReadXMLButton.Enabled = false;
                 scGridView.AllowUserToAddRows = false;
                 scGridView.AutoGenerateColumns = false;
                 
@@ -122,8 +122,16 @@ namespace Magic_Shop
                 {
                     storeGridView.Rows[row].Cells["storeQuantityCol"].Value = 0;
                 }
-
-                this.Activate();
+				calculateButton.Enabled = true;
+				generateShopMenuItem.Enabled = true;
+				scGridView.Enabled = true;
+				storeGridView.Enabled = true;
+				disabledLabel1.Enabled = false;
+				disabledLabel1.Text = "";
+				disabledLabel2.Enabled = false;
+				disabledLabel2.Text = "";
+				disabledPanel.Visible = false;
+				this.Activate();
 
             }
 
@@ -292,7 +300,7 @@ namespace Magic_Shop
 
         }
 
-        private void randomizeQty_Click(object sender, EventArgs e)
+        public void randomizeQty()
         {
             //ideally, want this button to go row by row:
             // 1. get the rarity from the item
@@ -346,11 +354,6 @@ namespace Magic_Shop
 
         }
 
-        private void startingGPTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void calculateButton_Click(object sender, EventArgs e)
         {
             int totalInCart = 0;
@@ -382,11 +385,6 @@ namespace Magic_Shop
             return;
             
         }
-        //act as though the "read XML" button was pressed on load
-        private void MainWindow_Load(object sender, EventArgs e)
-        {
-            ReadXMLButton.PerformClick();
-        }
 
         //go to github page when clicked
         private void aboutLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -394,18 +392,43 @@ namespace Magic_Shop
             System.Diagnostics.Process.Start("https://github.com/garylzimmer/Magic-Shop/");
         }
 
-        //whenever a row is added to the shopping cart, recalculate
-        private void scGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-            calculateButton.PerformClick();
-        }
+        // below causes too many pop ups
+		//whenever a row is added to the shopping cart, recalculate
+        //private void scGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        //{
+        //    calculateButton.PerformClick();
+       // }
         //whenever a row is removed from the shopping cart, recalculate
-        private void scGridView_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
-        {
-            calculateButton.PerformClick();
+        //private void scGridView_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        //{
+        //    calculateButton.PerformClick();
+        //}
 
-        }
-    }
+		private void readXMLFileMenuItem_Click(object sender, EventArgs e)
+		{
+			ReadXML();
+		}
+
+		private void generateShopMenuItem_Click(object sender, EventArgs e)
+		{
+			randomizeQty();
+		}
+
+		private void aboutMenuItem_Click(object sender, EventArgs e)
+		{
+			//MessageBox.Show("Magic Shop \n version 1.1 \n by Gary Zimmer \n https://github.com/garylzimmer/Magic-Shop/");
+			About myAbout = new About();
+			myAbout.ShowDialog();
+
+		}
+
+		private void editXMLFileMenuItem_Click(object sender, EventArgs e)
+		{
+			EditXML myEditXML = new EditXML();
+			myEditXML.Show();
+		}
+
+	}
 
 
 

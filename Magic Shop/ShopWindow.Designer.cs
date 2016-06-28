@@ -31,22 +31,6 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
 			this.ItemDataSet = new System.Data.DataSet();
 			this.storeGridView = new System.Windows.Forms.DataGridView();
-			this.storeBox = new System.Windows.Forms.GroupBox();
-			this.scGridView = new System.Windows.Forms.DataGridView();
-			this.scBox = new System.Windows.Forms.GroupBox();
-			this.FilePathTextBox = new System.Windows.Forms.TextBox();
-			this.ReadXMLButton = new System.Windows.Forms.Button();
-			this.randomizeQty = new System.Windows.Forms.Button();
-			this.startingGPTextBox = new System.Windows.Forms.TextBox();
-			this.scTotalTextBox = new System.Windows.Forms.TextBox();
-			this.endingGPTextBox = new System.Windows.Forms.TextBox();
-			this.label1 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
-			this.calculateButton = new System.Windows.Forms.Button();
-			this.aboutLabel = new System.Windows.Forms.LinkLabel();
-			this.label6 = new System.Windows.Forms.Label();
 			this.storeBuyCol = new System.Windows.Forms.DataGridViewButtonColumn();
 			this.storeQuantityCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.storeItemNameCol = new System.Windows.Forms.DataGridViewLinkColumn();
@@ -56,6 +40,9 @@
 			this.storeWeightCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.storeTypeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.storeRefCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.storeBox = new System.Windows.Forms.GroupBox();
+			this.disabledLabel2 = new System.Windows.Forms.Label();
+			this.scGridView = new System.Windows.Forms.DataGridView();
 			this.scReturnCol = new System.Windows.Forms.DataGridViewButtonColumn();
 			this.scQuantityCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.scItemNameCol = new System.Windows.Forms.DataGridViewLinkColumn();
@@ -65,11 +52,30 @@
 			this.scWeightCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.scTypeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.scRefCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.scBox = new System.Windows.Forms.GroupBox();
+			this.disabledLabel1 = new System.Windows.Forms.Label();
+			this.FilePathTextBox = new System.Windows.Forms.TextBox();
+			this.startingGPTextBox = new System.Windows.Forms.TextBox();
+			this.scTotalTextBox = new System.Windows.Forms.TextBox();
+			this.endingGPTextBox = new System.Windows.Forms.TextBox();
+			this.label1 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
+			this.label3 = new System.Windows.Forms.Label();
+			this.label4 = new System.Windows.Forms.Label();
+			this.calculateButton = new System.Windows.Forms.Button();
+			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+			this.openXMLFileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.generateShopMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.editXMLFileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.aboutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.disabledPanel = new System.Windows.Forms.Panel();
 			((System.ComponentModel.ISupportInitialize)(this.ItemDataSet)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.storeGridView)).BeginInit();
 			this.storeBox.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.scGridView)).BeginInit();
 			this.scBox.SuspendLayout();
+			this.menuStrip1.SuspendLayout();
+			this.disabledPanel.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// ItemDataSet
@@ -95,7 +101,8 @@
             this.storeRefCol});
 			this.storeGridView.DataSource = this.ItemDataSet;
 			this.storeGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-			this.storeGridView.Location = new System.Drawing.Point(6, 25);
+			this.storeGridView.Enabled = false;
+			this.storeGridView.Location = new System.Drawing.Point(6, 21);
 			this.storeGridView.Name = "storeGridView";
 			this.storeGridView.ReadOnly = true;
 			this.storeGridView.RowHeadersVisible = false;
@@ -103,182 +110,16 @@
 			this.storeGridView.TabIndex = 0;
 			this.storeGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.storeGridView_CellContentClick);
 			// 
-			// storeBox
-			// 
-			this.storeBox.Controls.Add(this.storeGridView);
-			this.storeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.storeBox.Location = new System.Drawing.Point(746, 225);
-			this.storeBox.Name = "storeBox";
-			this.storeBox.Size = new System.Drawing.Size(544, 314);
-			this.storeBox.TabIndex = 1;
-			this.storeBox.TabStop = false;
-			this.storeBox.Text = "Store Inventory";
-			// 
-			// scGridView
-			// 
-			this.scGridView.AllowUserToDeleteRows = false;
-			this.scGridView.AllowUserToResizeRows = false;
-			this.scGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.scGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.scReturnCol,
-            this.scQuantityCol,
-            this.scItemNameCol,
-            this.scPriceCol,
-            this.scRarityCol,
-            this.scDescriptionCol,
-            this.scWeightCol,
-            this.scTypeCol,
-            this.scRefCol});
-			this.scGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-			this.scGridView.Location = new System.Drawing.Point(6, 21);
-			this.scGridView.Name = "scGridView";
-			this.scGridView.ReadOnly = true;
-			this.scGridView.RowHeadersVisible = false;
-			this.scGridView.Size = new System.Drawing.Size(503, 289);
-			this.scGridView.TabIndex = 2;
-			this.scGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.scGridView_CellContentClick);
-			this.scGridView.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.scGridView_RowsAdded);
-			this.scGridView.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.scGridView_RowsRemoved);
-			// 
-			// scBox
-			// 
-			this.scBox.Controls.Add(this.scGridView);
-			this.scBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.scBox.Location = new System.Drawing.Point(225, 225);
-			this.scBox.Name = "scBox";
-			this.scBox.Size = new System.Drawing.Size(515, 327);
-			this.scBox.TabIndex = 3;
-			this.scBox.TabStop = false;
-			this.scBox.Text = "Shopping Cart";
-			// 
-			// FilePathTextBox
-			// 
-			this.FilePathTextBox.Location = new System.Drawing.Point(843, 199);
-			this.FilePathTextBox.Name = "FilePathTextBox";
-			this.FilePathTextBox.Size = new System.Drawing.Size(438, 20);
-			this.FilePathTextBox.TabIndex = 4;
-			this.FilePathTextBox.Text = "File Path Here";
-			// 
-			// ReadXMLButton
-			// 
-			this.ReadXMLButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.ReadXMLButton.Location = new System.Drawing.Point(225, 155);
-			this.ReadXMLButton.Name = "ReadXMLButton";
-			this.ReadXMLButton.Size = new System.Drawing.Size(133, 64);
-			this.ReadXMLButton.TabIndex = 5;
-			this.ReadXMLButton.Text = "Read XML File";
-			this.ReadXMLButton.UseVisualStyleBackColor = true;
-			this.ReadXMLButton.Click += new System.EventHandler(this.ReadXMLButton_Click);
-			// 
-			// randomizeQty
-			// 
-			this.randomizeQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.randomizeQty.Location = new System.Drawing.Point(364, 155);
-			this.randomizeQty.Name = "randomizeQty";
-			this.randomizeQty.Size = new System.Drawing.Size(133, 64);
-			this.randomizeQty.TabIndex = 6;
-			this.randomizeQty.Text = "Generate Shop";
-			this.randomizeQty.UseVisualStyleBackColor = true;
-			this.randomizeQty.Click += new System.EventHandler(this.randomizeQty_Click);
-			// 
-			// startingGPTextBox
-			// 
-			this.startingGPTextBox.Location = new System.Drawing.Point(119, 246);
-			this.startingGPTextBox.Name = "startingGPTextBox";
-			this.startingGPTextBox.Size = new System.Drawing.Size(100, 20);
-			this.startingGPTextBox.TabIndex = 7;
-			this.startingGPTextBox.Text = "Starting GP";
-			this.startingGPTextBox.TextChanged += new System.EventHandler(this.startingGPTextBox_TextChanged);
-			// 
-			// scTotalTextBox
-			// 
-			this.scTotalTextBox.Location = new System.Drawing.Point(119, 418);
-			this.scTotalTextBox.Name = "scTotalTextBox";
-			this.scTotalTextBox.Size = new System.Drawing.Size(100, 20);
-			this.scTotalTextBox.TabIndex = 8;
-			this.scTotalTextBox.Text = "Cart Total";
-			// 
-			// endingGPTextBox
-			// 
-			this.endingGPTextBox.Location = new System.Drawing.Point(119, 513);
-			this.endingGPTextBox.Name = "endingGPTextBox";
-			this.endingGPTextBox.Size = new System.Drawing.Size(100, 20);
-			this.endingGPTextBox.TabIndex = 9;
-			this.endingGPTextBox.Text = "Ending GP";
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(119, 227);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(61, 13);
-			this.label1.TabIndex = 10;
-			this.label1.Text = "Starting GP";
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(119, 402);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(64, 13);
-			this.label2.TabIndex = 11;
-			this.label2.Text = "Total in Cart";
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(119, 497);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(58, 13);
-			this.label3.TabIndex = 12;
-			this.label3.Text = "Ending GP";
-			// 
-			// label4
-			// 
-			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(840, 181);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(192, 13);
-			this.label4.TabIndex = 13;
-			this.label4.Text = "Items Generated from XML Source File:";
-			// 
-			// calculateButton
-			// 
-			this.calculateButton.Location = new System.Drawing.Point(122, 272);
-			this.calculateButton.Name = "calculateButton";
-			this.calculateButton.Size = new System.Drawing.Size(97, 23);
-			this.calculateButton.TabIndex = 14;
-			this.calculateButton.Text = "Calculate";
-			this.calculateButton.UseVisualStyleBackColor = true;
-			this.calculateButton.Click += new System.EventHandler(this.calculateButton_Click);
-			// 
-			// aboutLabel
-			// 
-			this.aboutLabel.AutoSize = true;
-			this.aboutLabel.Location = new System.Drawing.Point(12, 26);
-			this.aboutLabel.Name = "aboutLabel";
-			this.aboutLabel.Size = new System.Drawing.Size(241, 13);
-			this.aboutLabel.TabIndex = 15;
-			this.aboutLabel.TabStop = true;
-			this.aboutLabel.Text = "Made by Gary Zimmer. Visit the Github page here.";
-			this.aboutLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.aboutLabel_LinkClicked);
-			// 
-			// label6
-			// 
-			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(12, 13);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(355, 13);
-			this.label6.TabIndex = 17;
-			this.label6.Text = "Version 1.1 -Now with more error messages! Expanded item details popup.";
-			// 
 			// storeBuyCol
 			// 
+			this.storeBuyCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
 			this.storeBuyCol.HeaderText = "Buy?";
 			this.storeBuyCol.Name = "storeBuyCol";
 			this.storeBuyCol.ReadOnly = true;
+			this.storeBuyCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
 			this.storeBuyCol.Text = "Buy";
 			this.storeBuyCol.UseColumnTextForButtonValue = true;
+			this.storeBuyCol.Width = 37;
 			// 
 			// storeQuantityCol
 			// 
@@ -340,6 +181,52 @@
 			this.storeRefCol.Name = "storeRefCol";
 			this.storeRefCol.ReadOnly = true;
 			this.storeRefCol.Visible = false;
+			// 
+			// storeBox
+			// 
+			this.storeBox.Controls.Add(this.disabledLabel2);
+			this.storeBox.Controls.Add(this.storeGridView);
+			this.storeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.storeBox.Location = new System.Drawing.Point(634, 27);
+			this.storeBox.Name = "storeBox";
+			this.storeBox.Size = new System.Drawing.Size(544, 327);
+			this.storeBox.TabIndex = 1;
+			this.storeBox.TabStop = false;
+			this.storeBox.Text = "Store Inventory";
+			// 
+			// disabledLabel2
+			// 
+			this.disabledLabel2.AutoSize = true;
+			this.disabledLabel2.Location = new System.Drawing.Point(161, 0);
+			this.disabledLabel2.Name = "disabledLabel2";
+			this.disabledLabel2.Size = new System.Drawing.Size(180, 13);
+			this.disabledLabel2.TabIndex = 18;
+			this.disabledLabel2.Text = "Disabled until an XML File is chosen.";
+			// 
+			// scGridView
+			// 
+			this.scGridView.AllowUserToDeleteRows = false;
+			this.scGridView.AllowUserToResizeRows = false;
+			this.scGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.scGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.scReturnCol,
+            this.scQuantityCol,
+            this.scItemNameCol,
+            this.scPriceCol,
+            this.scRarityCol,
+            this.scDescriptionCol,
+            this.scWeightCol,
+            this.scTypeCol,
+            this.scRefCol});
+			this.scGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+			this.scGridView.Enabled = false;
+			this.scGridView.Location = new System.Drawing.Point(6, 21);
+			this.scGridView.Name = "scGridView";
+			this.scGridView.ReadOnly = true;
+			this.scGridView.RowHeadersVisible = false;
+			this.scGridView.Size = new System.Drawing.Size(503, 289);
+			this.scGridView.TabIndex = 2;
+			this.scGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.scGridView_CellContentClick);
 			// 
 			// scReturnCol
 			// 
@@ -407,13 +294,164 @@
 			this.scRefCol.ReadOnly = true;
 			this.scRefCol.Visible = false;
 			// 
+			// scBox
+			// 
+			this.scBox.Controls.Add(this.scGridView);
+			this.scBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.scBox.Location = new System.Drawing.Point(113, 27);
+			this.scBox.Name = "scBox";
+			this.scBox.Size = new System.Drawing.Size(515, 327);
+			this.scBox.TabIndex = 3;
+			this.scBox.TabStop = false;
+			this.scBox.Text = "Shopping Cart";
+			// 
+			// disabledLabel1
+			// 
+			this.disabledLabel1.AutoSize = true;
+			this.disabledLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.disabledLabel1.Location = new System.Drawing.Point(402, 142);
+			this.disabledLabel1.Name = "disabledLabel1";
+			this.disabledLabel1.Size = new System.Drawing.Size(367, 25);
+			this.disabledLabel1.TabIndex = 3;
+			this.disabledLabel1.Text = "Disabled until an XML File is chosen.";
+			// 
+			// FilePathTextBox
+			// 
+			this.FilePathTextBox.Location = new System.Drawing.Point(578, 0);
+			this.FilePathTextBox.Name = "FilePathTextBox";
+			this.FilePathTextBox.ReadOnly = true;
+			this.FilePathTextBox.Size = new System.Drawing.Size(600, 20);
+			this.FilePathTextBox.TabIndex = 4;
+			this.FilePathTextBox.Text = "File Path Here";
+			// 
+			// startingGPTextBox
+			// 
+			this.startingGPTextBox.Location = new System.Drawing.Point(7, 48);
+			this.startingGPTextBox.Name = "startingGPTextBox";
+			this.startingGPTextBox.Size = new System.Drawing.Size(100, 20);
+			this.startingGPTextBox.TabIndex = 7;
+			this.startingGPTextBox.Text = "Starting GP";
+			// 
+			// scTotalTextBox
+			// 
+			this.scTotalTextBox.Location = new System.Drawing.Point(7, 220);
+			this.scTotalTextBox.Name = "scTotalTextBox";
+			this.scTotalTextBox.Size = new System.Drawing.Size(100, 20);
+			this.scTotalTextBox.TabIndex = 8;
+			this.scTotalTextBox.Text = "Cart Total";
+			// 
+			// endingGPTextBox
+			// 
+			this.endingGPTextBox.Location = new System.Drawing.Point(7, 315);
+			this.endingGPTextBox.Name = "endingGPTextBox";
+			this.endingGPTextBox.Size = new System.Drawing.Size(100, 20);
+			this.endingGPTextBox.TabIndex = 9;
+			this.endingGPTextBox.Text = "Ending GP";
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(7, 29);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(61, 13);
+			this.label1.TabIndex = 10;
+			this.label1.Text = "Starting GP";
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(7, 204);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(64, 13);
+			this.label2.TabIndex = 11;
+			this.label2.Text = "Total in Cart";
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(7, 299);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(58, 13);
+			this.label3.TabIndex = 12;
+			this.label3.Text = "Ending GP";
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Location = new System.Drawing.Point(389, 3);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(192, 13);
+			this.label4.TabIndex = 13;
+			this.label4.Text = "Items Generated from XML Source File:";
+			// 
+			// calculateButton
+			// 
+			this.calculateButton.Enabled = false;
+			this.calculateButton.Location = new System.Drawing.Point(10, 74);
+			this.calculateButton.Name = "calculateButton";
+			this.calculateButton.Size = new System.Drawing.Size(97, 23);
+			this.calculateButton.TabIndex = 14;
+			this.calculateButton.Text = "Calculate";
+			this.calculateButton.UseVisualStyleBackColor = true;
+			this.calculateButton.Click += new System.EventHandler(this.calculateButton_Click);
+			// 
+			// menuStrip1
+			// 
+			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openXMLFileMenuItem,
+            this.generateShopMenuItem,
+            this.editXMLFileMenuItem,
+            this.aboutMenuItem});
+			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+			this.menuStrip1.Name = "menuStrip1";
+			this.menuStrip1.Size = new System.Drawing.Size(1178, 24);
+			this.menuStrip1.TabIndex = 0;
+			this.menuStrip1.TabStop = true;
+			this.menuStrip1.Text = "menuStrip1";
+			// 
+			// openXMLFileMenuItem
+			// 
+			this.openXMLFileMenuItem.Name = "openXMLFileMenuItem";
+			this.openXMLFileMenuItem.Size = new System.Drawing.Size(96, 20);
+			this.openXMLFileMenuItem.Text = "Open XML File";
+			this.openXMLFileMenuItem.Click += new System.EventHandler(this.readXMLFileMenuItem_Click);
+			// 
+			// generateShopMenuItem
+			// 
+			this.generateShopMenuItem.Enabled = false;
+			this.generateShopMenuItem.Name = "generateShopMenuItem";
+			this.generateShopMenuItem.Size = new System.Drawing.Size(149, 20);
+			this.generateShopMenuItem.Text = "Generate Shop Inventory";
+			this.generateShopMenuItem.Click += new System.EventHandler(this.generateShopMenuItem_Click);
+			// 
+			// editXMLFileMenuItem
+			// 
+			this.editXMLFileMenuItem.Name = "editXMLFileMenuItem";
+			this.editXMLFileMenuItem.Size = new System.Drawing.Size(87, 20);
+			this.editXMLFileMenuItem.Text = "Edit XML File";
+			this.editXMLFileMenuItem.Click += new System.EventHandler(this.editXMLFileMenuItem_Click);
+			// 
+			// aboutMenuItem
+			// 
+			this.aboutMenuItem.Name = "aboutMenuItem";
+			this.aboutMenuItem.Size = new System.Drawing.Size(52, 20);
+			this.aboutMenuItem.Text = "About";
+			this.aboutMenuItem.Click += new System.EventHandler(this.aboutMenuItem_Click);
+			// 
+			// disabledPanel
+			// 
+			this.disabledPanel.Controls.Add(this.disabledLabel1);
+			this.disabledPanel.Location = new System.Drawing.Point(7, 28);
+			this.disabledPanel.Name = "disabledPanel";
+			this.disabledPanel.Size = new System.Drawing.Size(1171, 326);
+			this.disabledPanel.TabIndex = 4;
+			// 
 			// MainWindow
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1293, 545);
-			this.Controls.Add(this.label6);
-			this.Controls.Add(this.aboutLabel);
+			this.ClientSize = new System.Drawing.Size(1178, 362);
+			this.Controls.Add(this.disabledPanel);
 			this.Controls.Add(this.calculateButton);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.label3);
@@ -422,20 +460,26 @@
 			this.Controls.Add(this.endingGPTextBox);
 			this.Controls.Add(this.scTotalTextBox);
 			this.Controls.Add(this.startingGPTextBox);
-			this.Controls.Add(this.randomizeQty);
-			this.Controls.Add(this.ReadXMLButton);
 			this.Controls.Add(this.FilePathTextBox);
 			this.Controls.Add(this.storeBox);
 			this.Controls.Add(this.scBox);
+			this.Controls.Add(this.menuStrip1);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MainMenuStrip = this.menuStrip1;
+			this.MinimizeBox = false;
 			this.Name = "MainWindow";
-			this.Text = "RPG Magic Item Shop";
-			this.Load += new System.EventHandler(this.MainWindow_Load);
+			this.Text = "RPG Magic Item Shop v1.2";
+			this.Load += new System.EventHandler(this.Form_Load);
 			((System.ComponentModel.ISupportInitialize)(this.ItemDataSet)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.storeGridView)).EndInit();
 			this.storeBox.ResumeLayout(false);
+			this.storeBox.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.scGridView)).EndInit();
 			this.scBox.ResumeLayout(false);
+			this.menuStrip1.ResumeLayout(false);
+			this.menuStrip1.PerformLayout();
+			this.disabledPanel.ResumeLayout(false);
+			this.disabledPanel.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -449,8 +493,6 @@
         private System.Windows.Forms.DataGridView scGridView;
         private System.Windows.Forms.GroupBox scBox;
         private System.Windows.Forms.TextBox FilePathTextBox;
-        private System.Windows.Forms.Button ReadXMLButton;
-        private System.Windows.Forms.Button randomizeQty;
         private System.Windows.Forms.TextBox startingGPTextBox;
         private System.Windows.Forms.TextBox scTotalTextBox;
         private System.Windows.Forms.TextBox endingGPTextBox;
@@ -459,17 +501,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button calculateButton;
-        private System.Windows.Forms.LinkLabel aboutLabel;
-		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.DataGridViewButtonColumn storeBuyCol;
-		private System.Windows.Forms.DataGridViewTextBoxColumn storeQuantityCol;
-		private System.Windows.Forms.DataGridViewLinkColumn storeItemNameCol;
-		private System.Windows.Forms.DataGridViewTextBoxColumn storePriceCol;
-		private System.Windows.Forms.DataGridViewTextBoxColumn storeRarityCol;
-		private System.Windows.Forms.DataGridViewTextBoxColumn storeDescriptionCol;
-		private System.Windows.Forms.DataGridViewTextBoxColumn storeWeightCol;
-		private System.Windows.Forms.DataGridViewTextBoxColumn storeTypeCol;
-		private System.Windows.Forms.DataGridViewTextBoxColumn storeRefCol;
 		private System.Windows.Forms.DataGridViewButtonColumn scReturnCol;
 		private System.Windows.Forms.DataGridViewTextBoxColumn scQuantityCol;
 		private System.Windows.Forms.DataGridViewLinkColumn scItemNameCol;
@@ -479,6 +510,23 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn scWeightCol;
 		private System.Windows.Forms.DataGridViewTextBoxColumn scTypeCol;
 		private System.Windows.Forms.DataGridViewTextBoxColumn scRefCol;
+		private System.Windows.Forms.MenuStrip menuStrip1;
+		private System.Windows.Forms.ToolStripMenuItem openXMLFileMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem generateShopMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem editXMLFileMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem aboutMenuItem;
+		private System.Windows.Forms.DataGridViewButtonColumn storeBuyCol;
+		private System.Windows.Forms.DataGridViewTextBoxColumn storeQuantityCol;
+		private System.Windows.Forms.DataGridViewLinkColumn storeItemNameCol;
+		private System.Windows.Forms.DataGridViewTextBoxColumn storePriceCol;
+		private System.Windows.Forms.DataGridViewTextBoxColumn storeRarityCol;
+		private System.Windows.Forms.DataGridViewTextBoxColumn storeDescriptionCol;
+		private System.Windows.Forms.DataGridViewTextBoxColumn storeWeightCol;
+		private System.Windows.Forms.DataGridViewTextBoxColumn storeTypeCol;
+		private System.Windows.Forms.DataGridViewTextBoxColumn storeRefCol;
+		private System.Windows.Forms.Label disabledLabel1;
+		private System.Windows.Forms.Label disabledLabel2;
+		private System.Windows.Forms.Panel disabledPanel;
 	}
 }
 
