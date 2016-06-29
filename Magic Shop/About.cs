@@ -31,5 +31,10 @@ namespace Magic_Shop
 		{
 			this.Close();
 		}
+
+		private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			System.Diagnostics.Process.Start("http://game-icons.net");
+		}
 	}
 }

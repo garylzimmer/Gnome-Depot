@@ -42,7 +42,7 @@ namespace Magic_Shop
             scGridView.AllowUserToAddRows = false;
             scGridView.AutoGenerateColumns = false;
 			disabledPanel.Visible = true;
-			disabledPanel.Parent.Controls.SetChildIndex(disabledPanel,0);
+			disabledPanel.BringToFront();
 
 		}
 
@@ -104,7 +104,8 @@ namespace Magic_Shop
             OpenFileDialog openXMLDialog = new OpenFileDialog();
             openXMLDialog.Filter = "XML File | *.xml";
             openXMLDialog.Title = "Select a(n) XML file with a list of items";
-            if (openXMLDialog.ShowDialog() == DialogResult.OK)
+			ItemDataSet.Clear();
+			if (openXMLDialog.ShowDialog() == DialogResult.OK)
             {
                 string sFileName = openXMLDialog.FileName;
 
@@ -131,6 +132,10 @@ namespace Magic_Shop
 				disabledLabel2.Enabled = false;
 				disabledLabel2.Text = "";
 				disabledPanel.Visible = false;
+				disabledLabel4.Visible = true;
+				arrow1label.Visible = false;
+				arrow2label.Visible = true;
+
 				this.Activate();
 
             }
@@ -320,6 +325,9 @@ namespace Magic_Shop
 
                 }
             }
+			disabledLabel4.Visible = false;
+			disabledPanel2.Visible = false;
+			arrow2label.Visible = false;
         }
 
         //clicking on sc return or item name for descript method
@@ -427,7 +435,6 @@ namespace Magic_Shop
 			EditXML myEditXML = new EditXML();
 			myEditXML.Show();
 		}
-
 	}
 
 

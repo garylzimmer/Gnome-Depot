@@ -53,7 +53,6 @@
 			this.scTypeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.scRefCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.scBox = new System.Windows.Forms.GroupBox();
-			this.disabledLabel1 = new System.Windows.Forms.Label();
 			this.FilePathTextBox = new System.Windows.Forms.TextBox();
 			this.startingGPTextBox = new System.Windows.Forms.TextBox();
 			this.scTotalTextBox = new System.Windows.Forms.TextBox();
@@ -69,13 +68,18 @@
 			this.editXMLFileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.aboutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.disabledPanel = new System.Windows.Forms.Panel();
+			this.disabledPanel2 = new System.Windows.Forms.Panel();
+			this.disabledLabel4 = new System.Windows.Forms.Label();
+			this.arrow2label = new System.Windows.Forms.Label();
+			this.disabledLabel1 = new System.Windows.Forms.Label();
+			this.arrow1label = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.ItemDataSet)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.storeGridView)).BeginInit();
 			this.storeBox.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.scGridView)).BeginInit();
 			this.scBox.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
-			this.disabledPanel.SuspendLayout();
+			this.disabledPanel2.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// ItemDataSet
@@ -305,19 +309,9 @@
 			this.scBox.TabStop = false;
 			this.scBox.Text = "Shopping Cart";
 			// 
-			// disabledLabel1
-			// 
-			this.disabledLabel1.AutoSize = true;
-			this.disabledLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.disabledLabel1.Location = new System.Drawing.Point(402, 142);
-			this.disabledLabel1.Name = "disabledLabel1";
-			this.disabledLabel1.Size = new System.Drawing.Size(367, 25);
-			this.disabledLabel1.TabIndex = 3;
-			this.disabledLabel1.Text = "Disabled until an XML File is chosen.";
-			// 
 			// FilePathTextBox
 			// 
-			this.FilePathTextBox.Location = new System.Drawing.Point(578, 0);
+			this.FilePathTextBox.Location = new System.Drawing.Point(578, 3);
 			this.FilePathTextBox.Name = "FilePathTextBox";
 			this.FilePathTextBox.ReadOnly = true;
 			this.FilePathTextBox.Size = new System.Drawing.Size(600, 20);
@@ -378,11 +372,12 @@
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(389, 3);
+			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label4.Location = new System.Drawing.Point(500, 4);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(192, 13);
+			this.label4.Size = new System.Drawing.Size(72, 15);
 			this.label4.TabIndex = 13;
-			this.label4.Text = "Items Generated from XML Source File:";
+			this.label4.Text = "Source File:";
 			// 
 			// calculateButton
 			// 
@@ -397,6 +392,7 @@
 			// 
 			// menuStrip1
 			// 
+			this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openXMLFileMenuItem,
             this.generateShopMenuItem,
@@ -418,6 +414,7 @@
 			// 
 			// generateShopMenuItem
 			// 
+			this.generateShopMenuItem.BackColor = System.Drawing.SystemColors.Control;
 			this.generateShopMenuItem.Enabled = false;
 			this.generateShopMenuItem.Name = "generateShopMenuItem";
 			this.generateShopMenuItem.Size = new System.Drawing.Size(149, 20);
@@ -440,17 +437,72 @@
 			// 
 			// disabledPanel
 			// 
-			this.disabledPanel.Controls.Add(this.disabledLabel1);
-			this.disabledPanel.Location = new System.Drawing.Point(7, 28);
+			this.disabledPanel.Font = new System.Drawing.Font("Wingdings 2", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+			this.disabledPanel.Location = new System.Drawing.Point(634, 29);
 			this.disabledPanel.Name = "disabledPanel";
-			this.disabledPanel.Size = new System.Drawing.Size(1171, 326);
+			this.disabledPanel.Size = new System.Drawing.Size(544, 326);
 			this.disabledPanel.TabIndex = 4;
+			// 
+			// disabledPanel2
+			// 
+			this.disabledPanel2.Controls.Add(this.disabledLabel4);
+			this.disabledPanel2.Controls.Add(this.arrow2label);
+			this.disabledPanel2.Controls.Add(this.disabledLabel1);
+			this.disabledPanel2.Controls.Add(this.arrow1label);
+			this.disabledPanel2.Font = new System.Drawing.Font("Wingdings 2", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+			this.disabledPanel2.Location = new System.Drawing.Point(0, 29);
+			this.disabledPanel2.Name = "disabledPanel2";
+			this.disabledPanel2.Size = new System.Drawing.Size(628, 326);
+			this.disabledPanel2.TabIndex = 7;
+			// 
+			// disabledLabel4
+			// 
+			this.disabledLabel4.AutoSize = true;
+			this.disabledLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.disabledLabel4.Location = new System.Drawing.Point(194, 77);
+			this.disabledLabel4.Name = "disabledLabel4";
+			this.disabledLabel4.Size = new System.Drawing.Size(318, 25);
+			this.disabledLabel4.TabIndex = 6;
+			this.disabledLabel4.Text = "Click \"Generate Shop Inventory\"";
+			this.disabledLabel4.Visible = false;
+			// 
+			// arrow2label
+			// 
+			this.arrow2label.AutoSize = true;
+			this.arrow2label.Font = new System.Drawing.Font("Wingdings", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+			this.arrow2label.Location = new System.Drawing.Point(127, -4);
+			this.arrow2label.Name = "arrow2label";
+			this.arrow2label.Size = new System.Drawing.Size(98, 106);
+			this.arrow2label.TabIndex = 5;
+			this.arrow2label.Text = "G";
+			this.arrow2label.Visible = false;
+			// 
+			// disabledLabel1
+			// 
+			this.disabledLabel1.AutoSize = true;
+			this.disabledLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.disabledLabel1.Location = new System.Drawing.Point(74, 47);
+			this.disabledLabel1.Name = "disabledLabel1";
+			this.disabledLabel1.Size = new System.Drawing.Size(465, 25);
+			this.disabledLabel1.TabIndex = 3;
+			this.disabledLabel1.Text = "Open an XML file with items formatted properly.";
+			// 
+			// arrow1label
+			// 
+			this.arrow1label.AutoSize = true;
+			this.arrow1label.Font = new System.Drawing.Font("Wingdings", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+			this.arrow1label.Location = new System.Drawing.Point(8, -4);
+			this.arrow1label.Name = "arrow1label";
+			this.arrow1label.Size = new System.Drawing.Size(98, 106);
+			this.arrow1label.TabIndex = 4;
+			this.arrow1label.Text = "G";
 			// 
 			// MainWindow
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1178, 362);
+			this.Controls.Add(this.disabledPanel2);
 			this.Controls.Add(this.disabledPanel);
 			this.Controls.Add(this.calculateButton);
 			this.Controls.Add(this.label4);
@@ -468,7 +520,7 @@
 			this.MainMenuStrip = this.menuStrip1;
 			this.MinimizeBox = false;
 			this.Name = "MainWindow";
-			this.Text = "RPG Magic Item Shop v1.2";
+			this.Text = "RPG Magic Item Shop v1.4.0";
 			this.Load += new System.EventHandler(this.Form_Load);
 			((System.ComponentModel.ISupportInitialize)(this.ItemDataSet)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.storeGridView)).EndInit();
@@ -478,8 +530,8 @@
 			this.scBox.ResumeLayout(false);
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
-			this.disabledPanel.ResumeLayout(false);
-			this.disabledPanel.PerformLayout();
+			this.disabledPanel2.ResumeLayout(false);
+			this.disabledPanel2.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -524,9 +576,13 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn storeWeightCol;
 		private System.Windows.Forms.DataGridViewTextBoxColumn storeTypeCol;
 		private System.Windows.Forms.DataGridViewTextBoxColumn storeRefCol;
-		private System.Windows.Forms.Label disabledLabel1;
 		private System.Windows.Forms.Label disabledLabel2;
 		private System.Windows.Forms.Panel disabledPanel;
+		private System.Windows.Forms.Panel disabledPanel2;
+		private System.Windows.Forms.Label disabledLabel4;
+		private System.Windows.Forms.Label arrow2label;
+		private System.Windows.Forms.Label disabledLabel1;
+		private System.Windows.Forms.Label arrow1label;
 	}
 }
 

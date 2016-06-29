@@ -17,6 +17,8 @@ namespace Magic_Shop
 			InitializeComponent();
 		}
 
+		public string sFileName = "";
+
 		public void openToEditXML()
 		{
 			OpenFileDialog openToEditXMLDialog = new OpenFileDialog();
@@ -24,15 +26,61 @@ namespace Magic_Shop
 			openToEditXMLDialog.Title = "Select a(n) XML file with a list of items";
 			if (openToEditXMLDialog.ShowDialog() == DialogResult.OK)
 			{
-				string sFileName = openToEditXMLDialog.FileName;
-
+				editDataSet.Clear();
+				sFileName = openToEditXMLDialog.FileName;
+				XMLFilePathBox.Text = sFileName;
+				editDataSet.ReadXml(sFileName);
+				editDGV.AutoGenerateColumns = true;
+				editDGV.DataSource = editDataSet;
+				editDGV.DataMember = "item";
+				editDGV.AllowUserToAddRows = true;
+				editDGV.AllowUserToDeleteRows = true;
+				this.Activate();
 			}
 		}
 
+		private void saveXMLFile()
+		{
+			if(editDataSet == null) { return;}
+
+			//Create the FileStream to write with.
+			SaveFileDialog saveXMLDialog = new SaveFileDialog();
+			saveXMLDialog.Filter = "XML File | *.xml";
+			saveXMLDialog.Title = "Save the XML File";
+			saveXMLDialog.ShowDialog();
+
+			if (saveXMLDialog.FileName != "")
+			{
+				try
+				{
+					System.IO.FileStream stream = new System.IO.FileStream(saveXMLDialog.FileName, System.IO.FileMode.Create);
+					editDataSet.WriteXml(stream);
+					stream.Close();
+					MessageBox.Show("File Saved.");
+					
+				}
+				catch (Exception ioErr)
+				{
+					MessageBox.Show("IO Error. You file is already open. Probably. \n" + ioErr);
+
+				}
+			}
+
+		}
 
 		private void openXMLFileToolStripMenuItem_Click(object sender, EventArgs e)
 		{
+			openToEditXML();
+		}
 
+		private void saveXMLFileToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			saveXMLFile();
+		}
+
+		private void EditXML_FormClosed(object sender, FormClosedEventArgs e)
+		{
+		
 		}
 	}
 }

@@ -34,6 +34,8 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.closeButton = new System.Windows.Forms.Button();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.label2 = new System.Windows.Forms.Label();
+			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -46,14 +48,14 @@
 			this.aboutTextBox.ReadOnly = true;
 			this.aboutTextBox.Size = new System.Drawing.Size(260, 86);
 			this.aboutTextBox.TabIndex = 0;
-			this.aboutTextBox.Text = "Magic Shop \r\nVersion 1.2\r\nby Gary Zimmer";
+			this.aboutTextBox.Text = "Magic Shop \r\nVersion 1.4\r\nby Gary Zimmer";
 			this.aboutTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// githublinkLabel1
 			// 
 			this.githublinkLabel1.AutoSize = true;
 			this.githublinkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.githublinkLabel1.Location = new System.Drawing.Point(7, 138);
+			this.githublinkLabel1.Location = new System.Drawing.Point(7, 114);
 			this.githublinkLabel1.Name = "githublinkLabel1";
 			this.githublinkLabel1.Size = new System.Drawing.Size(270, 16);
 			this.githublinkLabel1.TabIndex = 1;
@@ -64,7 +66,7 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(10, 112);
+			this.label1.Location = new System.Drawing.Point(10, 101);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(261, 13);
 			this.label1.TabIndex = 2;
@@ -91,11 +93,34 @@
 			this.pictureBox1.TabStop = false;
 			this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
 			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(79, 130);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(91, 13);
+			this.label2.TabIndex = 6;
+			this.label2.Text = "Icons courtesy of:";
+			// 
+			// linkLabel1
+			// 
+			this.linkLabel1.AutoSize = true;
+			this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.linkLabel1.Location = new System.Drawing.Point(76, 143);
+			this.linkLabel1.Name = "linkLabel1";
+			this.linkLabel1.Size = new System.Drawing.Size(132, 16);
+			this.linkLabel1.TabIndex = 5;
+			this.linkLabel1.TabStop = true;
+			this.linkLabel1.Text = "http://game-icons.net";
+			this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+			// 
 			// About
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(284, 212);
+			this.Controls.Add(this.label2);
+			this.Controls.Add(this.linkLabel1);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.closeButton);
 			this.Controls.Add(this.label1);
@@ -122,5 +147,7 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Button closeButton;
 		private System.Windows.Forms.PictureBox pictureBox1;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.LinkLabel linkLabel1;
 	}
 }
