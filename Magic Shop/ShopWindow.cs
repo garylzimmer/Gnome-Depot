@@ -12,11 +12,9 @@ namespace Magic_Shop
 {
     public partial class MainWindow : Form
     {
-
-        string XMLfilePath = @"C:\Users\Champ66\Desktop\ShopAssist\TestItems.xml";
         private DataSet itemsDS;
         Random rndQty = new Random();
-
+		string windowTitle;
         public MainWindow()
         {
             InitializeComponent();
@@ -24,25 +22,22 @@ namespace Magic_Shop
 
         private void Form_Load(object sender, EventArgs e)
         {
-
-
-            itemsDS = new DataSet("ItemDataSet");
+			windowTitle = this.Text;
+			itemsDS = new DataSet("ItemDataSet");
 
             //attempt to load XML path on form load, doesn't work, don't know why
-            itemsDS.ReadXml(XMLfilePath);
+            //itemsDS.ReadXml(XMLfilePath);
 
             //attempt to turn off autogenerating columns, doesn't work, don't know why
-            storeGridView.AutoGenerateColumns = false;
-            storeGridView.DataSource = ItemDataSet;
-            storeGridView.DataMember = "item";
-            DataGridViewLinkColumn itemColumn = new DataGridViewLinkColumn();
-            itemColumn.DataPropertyName = "name";
-            itemColumn.HeaderText = "Item Name";
-            storeGridView.AllowUserToAddRows = false;
-            scGridView.AllowUserToAddRows = false;
-            scGridView.AutoGenerateColumns = false;
-			disabledPanel.Visible = true;
-			disabledPanel.BringToFront();
+            //storeGridView.AutoGenerateColumns = false;
+            //storeGridView.DataSource = ItemDataSet;
+           // storeGridView.DataMember = "item";
+            //DataGridViewLinkColumn itemColumn = new DataGridViewLinkColumn();
+            //storeGridView.AllowUserToAddRows = false;
+           // scGridView.AllowUserToAddRows = false;
+            //scGridView.AutoGenerateColumns = false;
+			//disabledPanel.Visible = true;
+			//disabledPanel.BringToFront();
 
 		}
 
@@ -110,7 +105,7 @@ namespace Magic_Shop
                 string sFileName = openXMLDialog.FileName;
 
 
-                FilePathTextBox.Text = sFileName;
+				this.Text = windowTitle + " - " + sFileName;
                 ItemDataSet.ReadXml(sFileName);
                 storeGridView.AutoGenerateColumns = false;
                 storeGridView.DataSource = ItemDataSet;

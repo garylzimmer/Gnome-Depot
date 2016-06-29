@@ -17,10 +17,13 @@ namespace Magic_Shop
 			InitializeComponent();
 		}
 
+		string origWindowTitle;
+
 		public string sFileName = "";
 
 		public void openToEditXML()
 		{
+			
 			OpenFileDialog openToEditXMLDialog = new OpenFileDialog();
 			openToEditXMLDialog.Filter = "XML File | *.xml";
 			openToEditXMLDialog.Title = "Select a(n) XML file with a list of items";
@@ -28,7 +31,7 @@ namespace Magic_Shop
 			{
 				editDataSet.Clear();
 				sFileName = openToEditXMLDialog.FileName;
-				XMLFilePathBox.Text = sFileName;
+				this.Text = origWindowTitle + " - " + sFileName;
 				editDataSet.ReadXml(sFileName);
 				editDGV.AutoGenerateColumns = true;
 				editDGV.DataSource = editDataSet;
@@ -78,9 +81,9 @@ namespace Magic_Shop
 			saveXMLFile();
 		}
 
-		private void EditXML_FormClosed(object sender, FormClosedEventArgs e)
+		private void EditXML_Load(object sender, EventArgs e)
 		{
-		
+			origWindowTitle = this.Text;
 		}
 	}
 }
