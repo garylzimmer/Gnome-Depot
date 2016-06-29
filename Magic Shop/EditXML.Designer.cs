@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditXML));
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.newXMLFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.openXMLFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -171,6 +172,7 @@
 			this.Controls.Add(this.XMLFilePathBox);
 			this.Controls.Add(this.editDGV);
 			this.Controls.Add(this.menuStrip1);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MainMenuStrip = this.menuStrip1;
 			this.Name = "EditXML";
 			this.Text = "Item XML Editor";
