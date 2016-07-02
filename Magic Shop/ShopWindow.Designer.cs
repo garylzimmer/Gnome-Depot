@@ -497,7 +497,7 @@
 			this.MainMenuStrip = this.menuStrip1;
 			this.MinimizeBox = false;
 			this.Name = "MainWindow";
-			this.Text = "RPG Magic Item Shop v1.4.0";
+			this.Text = "RPG Magic Item Shop v1.4.2";
 			this.Load += new System.EventHandler(this.Form_Load);
 			((System.ComponentModel.ISupportInitialize)(this.ItemDataSet)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.storeGridView)).EndInit();

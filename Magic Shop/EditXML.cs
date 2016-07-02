@@ -32,7 +32,14 @@ namespace Magic_Shop
 				editDataSet.Clear();
 				sFileName = openToEditXMLDialog.FileName;
 				this.Text = origWindowTitle + " - " + sFileName;
-				editDataSet.ReadXml(sFileName);
+				try
+				{
+					editDataSet.ReadXml(sFileName);
+				}
+				catch(Exception e)
+				{
+					MessageBox.Show("Problem reading XML file, probably malformed. \n Details: \n" + e);
+				}
 				editDGV.AutoGenerateColumns = true;
 				editDGV.DataSource = editDataSet;
 				editDGV.DataMember = "item";

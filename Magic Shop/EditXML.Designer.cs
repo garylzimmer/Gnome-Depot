@@ -42,6 +42,7 @@
 			this.openXMLFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.saveXMLFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+			this.label1 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.editDataSet)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.editDGV)).BeginInit();
 			this.menuStrip1.SuspendLayout();
@@ -66,7 +67,7 @@
 			this.editDGV.DataSource = this.editDataSet;
 			this.editDGV.Location = new System.Drawing.Point(0, 26);
 			this.editDGV.Name = "editDGV";
-			this.editDGV.Size = new System.Drawing.Size(1213, 462);
+			this.editDGV.Size = new System.Drawing.Size(1213, 460);
 			this.editDGV.TabIndex = 1;
 			// 
 			// editXMLItemNameCol
@@ -144,11 +145,23 @@
 			this.menuStrip1.TabIndex = 0;
 			this.menuStrip1.Text = "menuStrip1";
 			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Location = new System.Drawing.Point(285, 489);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(666, 16);
+			this.label1.TabIndex = 2;
+			this.label1.Text = "Ensure that you have an entire blank row at the end of the list or your data will" +
+    " not save properly!";
+			// 
 			// EditXML
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1237, 491);
+			this.ClientSize = new System.Drawing.Size(1237, 513);
+			this.Controls.Add(this.label1);
 			this.Controls.Add(this.editDGV);
 			this.Controls.Add(this.menuStrip1);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -179,5 +192,6 @@
 		private System.Windows.Forms.ToolStripMenuItem openXMLFileToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem saveXMLFileToolStripMenuItem;
 		private System.Windows.Forms.MenuStrip menuStrip1;
+		private System.Windows.Forms.Label label1;
 	}
 }

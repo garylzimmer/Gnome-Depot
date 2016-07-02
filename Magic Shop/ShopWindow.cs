@@ -106,7 +106,14 @@ namespace Magic_Shop
 
 
 				this.Text = windowTitle + " - " + sFileName;
-                ItemDataSet.ReadXml(sFileName);
+                try
+					{
+					ItemDataSet.ReadXml(sFileName);
+					}
+				catch(Exception e)
+				{
+					MessageBox.Show("Problem reading XML file, probably malformed. \n Details: \n" + e);
+				}
                 storeGridView.AutoGenerateColumns = false;
                 storeGridView.DataSource = ItemDataSet;
                 storeGridView.DataMember = "item";

@@ -48,7 +48,7 @@
 			this.aboutTextBox.ReadOnly = true;
 			this.aboutTextBox.Size = new System.Drawing.Size(260, 86);
 			this.aboutTextBox.TabIndex = 0;
-			this.aboutTextBox.Text = "Magic Shop \r\nVersion 1.4\r\nby Gary Zimmer";
+			this.aboutTextBox.Text = "Magic Shop \r\nVersion 1.4.2\r\nby Gary Zimmer";
 			this.aboutTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// githublinkLabel1
