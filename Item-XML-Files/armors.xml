@@ -1,0 +1,344 @@
+<data>
+  <Armor>
+    <item>
+      
+      <name>Adamantine Armor</name>
+      <rarity>Uncommon</rarity>
+      <description>This suit of armor is reinforced with adamantine, one of the hardest substances in existence. While you’re wearing it, any critical hit against you becomes a normal hit.</description>
+      <price>500</price>
+      <type>Medium or Heavy Armor, but not Hide</type>
+      <weight>20</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      
+      <name>Animated Shield</name>
+      <rarity>Very Rare</rarity>
+      <description>While holding this shield, you can speak its command word as a bonus action to cause it to animate. The shield leaps into the air and hovers in your space to protect you as if you were wielding it, leaving your hands free. The shield remains animated for 1 minute, until you use a bonus action to end this effect, or until you are incapacitated or die, at which point the shield falls to the ground or into your hand if you have one free.</description>
+      <price>6000</price>
+      <type>Armor (shield), Requires Attunement</type>
+      <weight>6</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      
+      <name>Armor of Invulnerability</name>
+      <rarity>Legendary</rarity>
+      <description>You have resistance to nonmagical damage while you wear this armor. Additionally, you can use an action to make yourself immune to nonmagical damage for 10 minutes or until you are no longer wearing the armor. Once this special action is used, it can't be used again until the next dawn.</description>
+      <price>18000</price>
+      <type>Heavy Plate Armor</type>
+      <weight>65</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      
+      <name>Armor of Resistance</name>
+      <rarity>Rare</rarity>
+      <description>You have resistance to one type of damage while you wear this armor. The GM chooses the type or determines it randomly from the options.</description>
+      <price>6000</price>
+      <type>Light, Medium, or Heavy Armor</type>
+      <weight>25</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      
+      <name>Armor of Vulnerability</name>
+      <rarity>Rare</rarity>
+      <description>While wearing this armor, you have resistance to one of the following damage types: bludgeoning, piercing, or slashing. The GM chooses the type or determines it randomly. Curse. This armor is cursed, a fact that is revealed only when an identify spell is cast on the armor or you attune to it. Attuning to the armor curses you until you are targeted by the remove curse spell or similar magic; removing the armor fails to end the curse. While cursed, you have vulnerability to two of the three damage types associated with the armor (not the one to which it grants resistance).</description>
+      <price>9000</price>
+      <type>Heavy Plate Armor</type>
+      <weight>65</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      
+      <name>Armor +1</name>
+      <rarity>Rare</rarity>
+      <description>You have a bonus to AC while wearing this armor. The bonus is determined by its rarity.</description>
+      <price>1500</price>
+      <type>Light, Medium, or Heavy</type>
+      <weight>25</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      
+      <name>Armor +2</name>
+      <rarity>Very Rare</rarity>
+      <description>You have a bonus to AC while wearing this armor. The bonus is determined by its rarity.</description>
+      <price>6000</price>
+      <type>Light, Medium, or Heavy</type>
+      <weight>25</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      
+      <name>Armor +3</name>
+      <rarity>Legendary</rarity>
+      <description>You have a bonus to AC while wearing this armor. The bonus is determined by its rarity.</description>
+      <price>24000</price>
+      <type>Light, Medium, or Heavy</type>
+      <weight>25</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      
+      <name>Arrow-Catching Shield</name>
+      <rarity>Rare</rarity>
+      <description>You gain a +2 bonus to AC against ranged attacks while you wield this shield. This bonus is in addition to the shield's normal bonus to AC. In addition, whenever an attacker makes a ranged attack against a target within 5 feet of you, you can use your reaction to become the target of the attack instead.</description>
+      <price>6000</price>
+      <type>Armor (shield)</type>
+      <weight>6</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      
+      <name>Demon Armor</name>
+      <rarity>Very Rare</rarity>
+      <description>While wearing this armor, you gain a +1 bonus to AC, and you can understand and speak Abyssal. In addition, the armor's clawed gauntlets turn unarmed strikes with your hands into magic weapons that deal slashing damage, with a +1 bonus to attack rolls and damage rolls and a damage die of 1d8. Curse. Once you don this cursed armor, you can't doff it unless you are targeted by the remove curse spell or similar magic. While wearing the armor, you have disadvantage on attack rolls against demons and on saving throws against their spells and special abilities.</description>
+      <price>3000</price>
+      <type>Heavy Plate Armor</type>
+      <weight>65</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      
+      <name>Dragon Scale Mail</name>
+      <rarity>Very Rare</rarity>
+      <description>Dragon scale mail is made of the scales of one kind of dragon. Sometimes dragons collect their cast-off scales and gift them to humanoids. Other times, hunters carefully skin and preserve the hide of a dead dragon. In either case, dragon scale mail is highly valued. While wearing this armor, you gain a +1 bonus to AC, you have advantage on saving throws against the Frightful Presence and breath weapons of dragons, and you have resistance to one damage type that is determined by the kind of dragon that provided the scales (see the table). Additionally, you can focus your senses as an action to magically discern the distance and direction to the closest dragon within 30 miles of you that is of the same type as the armor. This special action can't be used again until the next dawn.</description>
+      <price>4000</price>
+      <type>Scale Mail</type>
+      <weight>45</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      
+      <name>Dwarven Plate</name>
+      <rarity>Very Rare</rarity>
+      <description>While wearing this armor, you gain a +2 bonus to AC. In addition, if an effect moves you against your will along the ground, you can use your reaction to reduce the distance you are moved by up to 10 feet.</description>
+      <price>9000</price>
+      <type>Plate Armor</type>
+      <weight>65</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      
+      <name>Elven Chain</name>
+      <rarity>Rare</rarity>
+      <description>You gain a +1 bonus to AC while you wear this armor. You are considered proficient with this armor even if you lack proficiency with medium armor.</description>
+      <price>4000</price>
+      <type>Chain Shirt</type>
+      <weight>20</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      
+      <name>Glamoured Studded Leather</name>
+      <rarity>Rare</rarity>
+      <description>While wearing this armor, you gain a +1 bonus to AC. You can also use a bonus action to speak the armor's command word and cause the armor to assume the appearance of a normal set of clothing or some other kind of armor. You decide what it looks like, including color, style, and accessories, but the armor retains its normal bulk and weight. The illusory appearance lasts until you use this property again or remove the armor.</description>
+      <price>2000</price>
+      <type>Studded Leather</type>
+      <weight>13</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      
+      <name>Mithral Armor</name>
+      <rarity>Uncommon</rarity>
+      <description>Mithral is a light, flexible metal. A mithral chain shirt or breastplate can be worn under normal clothes. If the armor normally imposes disadvantage on Dexterity (Stealth) checks or has a Strength requirement, the mithral version of the armor doesn't.</description>
+      <price>800</price>
+      <type>Medium or Heavy, but not Hide</type>
+      <weight>30</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      
+      <name>Plate Armor of Etherealness</name>
+      <rarity>Legendary</rarity>
+      <description>While you’re wearing this armor, you can speak its command word as an action to gain the effect of the etherealness spell, which last for 10 minutes or until you remove the armor or use an action to speak the command word again. This property of the armor can’t be used again until the next dawn.</description>
+      <price>48000</price>
+      <type>Plate Armor</type>
+      <weight>65</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      
+      <name>Shield of Missile Attraction</name>
+      <rarity>Rare</rarity>
+      <description>While holding this shield, you have resistance to damage from ranged weapon attacks.</description>
+      <price>6000</price>
+      <type>Armor (shield)</type>
+      <weight>6</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      
+      <name>Shield +1</name>
+      <rarity>Uncommon</rarity>
+      <description>While holding this shield, you have a bonus to AC determined by the shield’s rarity. This bonus is in addition to the shield’s normal bonus to AC.</description>
+      <price>1500</price>
+      <type>Armor (shield)</type>
+      <weight>6</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      
+      <name>Shield +2</name>
+      <rarity>Rare</rarity>
+      <description>While holding this shield, you have a bonus to AC determined by the shield’s rarity. This bonus is in addition to the shield’s normal bonus to AC.</description>
+      <price>6000</price>
+      <type>Armor (shield)</type>
+      <weight>6</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      
+      <name>Shield +3</name>
+      <rarity>Very Rare</rarity>
+      <description>While holding this shield, you have a bonus to AC determined by the shield’s rarity. This bonus is in addition to the shield’s normal bonus to AC.</description>
+      <price>24000</price>
+      <type>Armor (shield)</type>
+      <weight>6</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      
+      <name>Spellguard Shield</name>
+      <rarity>Very Rare</rarity>
+      <description>While holding this shield, you have advantage on saving throws against spells and other magical effects, and spell attacks have disadvantage against you.</description>
+      <price>50000</price>
+      <type>Armor (shield)</type>
+      <weight>6</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      
+      <name>Leather Armor</name>
+      <rarity>Common</rarity>
+      <description>Consists of chest and shoulder protectors made of stiffened leather, with lighter and more flexible protection for the rest of the body. AC 11+DEX</description>
+      <price>10</price>
+      <type>Light Armor</type>
+      <weight>10</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      
+      <name>Studded Leather Armor</name>
+      <rarity>Rare</rarity>
+      <description>Reinforced with close-set rivets or spikes. AC 12+DEX</description>
+      <price>45</price>
+      <type>Light Armor</type>
+      <weight>13</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      
+      <name>Padded Armor</name>
+      <rarity>Uncommon</rarity>
+      <description>Disadvantage to Stealth. AC 11+DEX</description>
+      <price>5</price>
+      <type>Light Armor</type>
+      <weight>8</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      
+      <name>Hide Armor</name>
+      <rarity>Common</rarity>
+      <description>Crude armor made from the thick furs and pelts. AC 12+DEX (max 2)</description>
+      <price>10</price>
+      <type>Medium Armor</type>
+      <weight>12</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      
+      <name>Chain Shirt Armor</name>
+      <rarity>Common</rarity>
+      <description>Made of interlocking metal rings, a chain shirt is worn between layers of clothing or leather. This armor offers modest protection to the wearer's upper body and allows the sound of the rings rubbing against one another to be muffled by outer layers. AC 13+DEX (Max 2)</description>
+      <price>50</price>
+      <type>Medium Armor</type>
+      <weight>20</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      
+      <name>Scale Mail Armor</name>
+      <rarity>Uncommon</rarity>
+      <description>This armor consists of a coat and leggings (and perhaps a separate skirt) of leather covered with overlapping pieces of metal, much like the scales of a fish. The suit includes gauntlets.  Disadvantage on Stealth checks. AC 14+DEX (Max 2)</description>
+      <price>50</price>
+      <type>Medium Armor</type>
+      <weight>45</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      
+      <name>Breastplate Armor</name>
+      <rarity>Common</rarity>
+      <description>This armor consists of a fitted metal chest piece worn with supple leather. Although it leaves the legs and arms relatively unprotected, this armor provides good protection for the wearer's vital organs while leaving the wearer relatively unencumbered.  AC 14+DEX (Max 2)</description>
+      <price>400</price>
+      <type>Medium Armor</type>
+      <weight>20</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      
+      <name>Half Plate Armor</name>
+      <rarity>Rare</rarity>
+      <description>Half plate consists of shaped metal plates that cover most of the wearer's body. It does not include leg protection beyond simple greaves that are attached with leather straps. AC 15+DEX (Max 2) Disadvantage on Stealth checks.</description>
+      <price>750</price>
+      <type>Medium Armor</type>
+      <weight>40</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      
+      <name>Ring Mail Armor</name>
+      <rarity>Common</rarity>
+      <description>Leather with heavy rings swen into it. AC 14. Disadvantage on Stealth checks.</description>
+      <price>30</price>
+      <type>Heavy Armor</type>
+      <weight>40</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      
+      <name>Chain Mail Armor</name>
+      <rarity>Common</rarity>
+      <description>Made of interlocking metal rings worn over a layer of quilted fabric. Requires STR 13 to wear without penalty (reduce speed by 10ft). AC 16. Disadvantage on Stealth checks.</description>
+      <price>75</price>
+      <type>Heavy Armor</type>
+      <weight>55</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      
+      <name>Splint Armor</name>
+      <rarity>Rare</rarity>
+      <description>This armor is made of narrow vertical strips of metal riveted to a backing of leather that is worn over cloth padding. Flexible chain mail protects the joints. Requires STR 15 to wear without penalty (reduce speed by 10ft). AC 17. Disadvantage on Stealth check.</description>
+      <price>200</price>
+      <type>Heavy Armor</type>
+      <weight>60</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      
+      <name>Plate Armor</name>
+      <rarity>Rare</rarity>
+      <description>Plate consists of shaped, interlocking metal plates to cover the entire body. A suit of plate includes gauntlets, heavy leather boots, a visored helmet, and thick layers of padding underneath the armor. Buckles and straps distribute the weight over the body. AC 18. Requires STR 15. Disadvantage on Stealth checks.</description>
+      <price>1500</price>
+      <type>Heavy Armor</type>
+      <weight>65</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      
+      <name>Shield</name>
+      <rarity>Common</rarity>
+      <description>Made from wood or metal and carried in one hand. Can only benefit from one shield at a time. AC +2.</description>
+      <price>10</price>
+      <type>Shield</type>
+      <weight>6</weight>
+      <ref>SRD</ref>
+    </item>
+  </Armor>
+</data>
