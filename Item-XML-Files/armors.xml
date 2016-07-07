@@ -1,7 +1,5 @@
-<data>
-  <Armor>
+ <Armor>
     <item>
-      
       <name>Adamantine Armor</name>
       <rarity>Uncommon</rarity>
       <description>This suit of armor is reinforced with adamantine, one of the hardest substances in existence. While you’re wearing it, any critical hit against you becomes a normal hit.</description>
@@ -11,7 +9,6 @@
       <ref>SRD</ref>
     </item>
     <item>
-      
       <name>Animated Shield</name>
       <rarity>Very Rare</rarity>
       <description>While holding this shield, you can speak its command word as a bonus action to cause it to animate. The shield leaps into the air and hovers in your space to protect you as if you were wielding it, leaving your hands free. The shield remains animated for 1 minute, until you use a bonus action to end this effect, or until you are incapacitated or die, at which point the shield falls to the ground or into your hand if you have one free.</description>
@@ -21,7 +18,6 @@
       <ref>SRD</ref>
     </item>
     <item>
-      
       <name>Armor of Invulnerability</name>
       <rarity>Legendary</rarity>
       <description>You have resistance to nonmagical damage while you wear this armor. Additionally, you can use an action to make yourself immune to nonmagical damage for 10 minutes or until you are no longer wearing the armor. Once this special action is used, it can't be used again until the next dawn.</description>
@@ -31,7 +27,6 @@
       <ref>SRD</ref>
     </item>
     <item>
-      
       <name>Armor of Resistance</name>
       <rarity>Rare</rarity>
       <description>You have resistance to one type of damage while you wear this armor. The GM chooses the type or determines it randomly from the options.</description>
@@ -41,7 +36,6 @@
       <ref>SRD</ref>
     </item>
     <item>
-      
       <name>Armor of Vulnerability</name>
       <rarity>Rare</rarity>
       <description>While wearing this armor, you have resistance to one of the following damage types: bludgeoning, piercing, or slashing. The GM chooses the type or determines it randomly. Curse. This armor is cursed, a fact that is revealed only when an identify spell is cast on the armor or you attune to it. Attuning to the armor curses you until you are targeted by the remove curse spell or similar magic; removing the armor fails to end the curse. While cursed, you have vulnerability to two of the three damage types associated with the armor (not the one to which it grants resistance).</description>
@@ -51,7 +45,6 @@
       <ref>SRD</ref>
     </item>
     <item>
-      
       <name>Armor +1</name>
       <rarity>Rare</rarity>
       <description>You have a bonus to AC while wearing this armor. The bonus is determined by its rarity.</description>
@@ -61,7 +54,6 @@
       <ref>SRD</ref>
     </item>
     <item>
-      
       <name>Armor +2</name>
       <rarity>Very Rare</rarity>
       <description>You have a bonus to AC while wearing this armor. The bonus is determined by its rarity.</description>
@@ -341,4 +333,3 @@
       <ref>SRD</ref>
     </item>
   </Armor>
-</data>
