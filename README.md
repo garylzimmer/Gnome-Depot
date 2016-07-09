@@ -1,6 +1,7 @@
 # Magic-Shop
 A magic item shop management tool designed for use in tabletop games.
 Since it's written in C#, Requires Windows and Newest .Net Framework!
+For the latest binary file, click "releases"
 
 Instead of actually working on my DnD campaign, I've been working on a program that would assist when players want to visit a shop and stock up on items.
 
