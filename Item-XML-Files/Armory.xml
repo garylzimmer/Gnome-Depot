@@ -1,0 +1,533 @@
+<data>
+    <item>
+      <name>Studded Leather Armor</name>
+      <rarity>Rare</rarity>
+      <description>Reinforced with close-set rivets or spikes. AC 12+DEX</description>
+      <price>45</price>
+      <type>Light Armor</type>
+      <weight>13</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Chain Shirt Armor</name>
+      <rarity>Common</rarity>
+      <description>Made of interlocking metal rings, a chain shirt is worn between layers of clothing or leather. This armor offers modest protection to the wearer's upper body and allows the sound of the rings rubbing against one another to be muffled by outer layers. AC 13+DEX (Max 2)</description>
+      <price>50</price>
+      <type>Medium Armor</type>
+      <weight>20</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Scale Mail Armor</name>
+      <rarity>Uncommon</rarity>
+      <description>This armor consists of a coat and leggings (and perhaps a separate skirt) of leather covered with overlapping pieces of metal, much like the scales of a fish. The suit includes gauntlets.  Disadvantage on Stealth checks. AC 14+DEX (Max 2)</description>
+      <price>50</price>
+      <type>Medium Armor</type>
+      <weight>45</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Breastplate Armor</name>
+      <rarity>Common</rarity>
+      <description>This armor consists of a fitted metal chest piece worn with supple leather. Although it leaves the legs and arms relatively unprotected, this armor provides good protection for the wearer's vital organs while leaving the wearer relatively unencumbered.  AC 14+DEX (Max 2)</description>
+      <price>400</price>
+      <type>Medium Armor</type>
+      <weight>20</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Half Plate Armor</name>
+      <rarity>Rare</rarity>
+      <description>Half plate consists of shaped metal plates that cover most of the wearer's body. It does not include leg protection beyond simple greaves that are attached with leather straps. AC 15+DEX (Max 2) Disadvantage on Stealth checks.</description>
+      <price>750</price>
+      <type>Medium Armor</type>
+      <weight>40</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Ring Mail Armor</name>
+      <rarity>Common</rarity>
+      <description>Leather with heavy rings swen into it. AC 14. Disadvantage on Stealth checks.</description>
+      <price>30</price>
+      <type>Heavy Armor</type>
+      <weight>40</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Chain Mail Armor</name>
+      <rarity>Common</rarity>
+      <description>Made of interlocking metal rings worn over a layer of quilted fabric. Requires STR 13 to wear without penalty (reduce speed by 10ft). AC 16. Disadvantage on Stealth checks.</description>
+      <price>75</price>
+      <type>Heavy Armor</type>
+      <weight>55</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Splint Armor</name>
+      <rarity>Rare</rarity>
+      <description>This armor is made of narrow vertical strips of metal riveted to a backing of leather that is worn over cloth padding. Flexible chain mail protects the joints. Requires STR 15 to wear without penalty (reduce speed by 10ft). AC 17. Disadvantage on Stealth check.</description>
+      <price>200</price>
+      <type>Heavy Armor</type>
+      <weight>60</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Plate Armor</name>
+      <rarity>Rare</rarity>
+      <description>Plate consists of shaped, interlocking metal plates to cover the entire body. A suit of plate includes gauntlets, heavy leather boots, a visored helmet, and thick layers of padding underneath the armor. Buckles and straps distribute the weight over the body. AC 18. Requires STR 15. Disadvantage on Stealth checks.</description>
+      <price>1500</price>
+      <type>Heavy Armor</type>
+      <weight>65</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Shield</name>
+      <rarity>Common</rarity>
+      <description>Made from wood or metal and carried in one hand. Can only benefit from one shield at a time. AC +2.</description>
+      <price>10</price>
+      <type>Shield</type>
+      <weight>6</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Dagger</name>
+      <rarity>Common</rarity>
+      <description>1d4 piercing, 20/60 range, finesse, light, thrown</description>
+      <price>2</price>
+      <type>Simple Melee Weapon</type>
+      <weight>1</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Handaxe</name>
+      <rarity>Common</rarity>
+      <description>1d6 slashing, 20/60 range, light, thrown</description>
+      <price>5</price>
+      <type>Simple Melee Weapon</type>
+      <weight>2</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Javelin</name>
+      <rarity>Uncommon</rarity>
+      <description>1d6 piercing, 30/120 range, thrown</description>
+      <price>0.5</price>
+      <type>Simple Melee Weapon</type>
+      <weight>2</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Light Hammer</name>
+      <rarity>Uncommon</rarity>
+      <description>1d4 bludgeoning, 20/60 range, thrown, light</description>
+      <price>2</price>
+      <type>Simple Melee Weapon</type>
+      <weight>2</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Mace</name>
+      <rarity>Common</rarity>
+      <description>1d6 bludgeoning</description>
+      <price>5</price>
+      <type>Simple Melee Weapon</type>
+      <weight>4</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Sickle</name>
+      <rarity>Uncommon</rarity>
+      <description>1d4 slashing, light</description>
+      <price>1</price>
+      <type>Simple Melee Weapon</type>
+      <weight>2</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Spear</name>
+      <rarity>Common</rarity>
+      <description>1d6 piercing, thrown, versatile (1d8)</description>
+      <price>1</price>
+      <type>Simple Melee Weapon</type>
+      <weight>3</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Battleaxe</name>
+      <rarity>Common</rarity>
+      <description>1d8 slashing, versatile</description>
+      <price>10</price>
+      <type>Martial Melee Weapon</type>
+      <weight>4</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Flail</name>
+      <rarity>Uncommon</rarity>
+      <description>1d8 bludgeoning</description>
+      <price>10</price>
+      <type>Martial Melee Weapon</type>
+      <weight>2</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Glaive</name>
+      <rarity>Uncommon</rarity>
+      <description>1d10 slashing, heavy, reach, two-handed</description>
+      <price>20</price>
+      <type>Martial Melee Weapon</type>
+      <weight>6</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Greataxe</name>
+      <rarity>Common</rarity>
+      <description>1d12 slashing, heavy, two-handed</description>
+      <price>30</price>
+      <type>Martial Melee Weapon</type>
+      <weight>7</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Greatsword</name>
+      <rarity>Common</rarity>
+      <description>2d6 slashing, heavy, two-handed</description>
+      <price>50</price>
+      <type>Martial Melee Weapon</type>
+      <weight>6</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Halberd</name>
+      <rarity>Uncommon</rarity>
+      <description>1d10 slashing, heavy, two-handed</description>
+      <price>20</price>
+      <type>Martial Melee Weapon</type>
+      <weight>6</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Lance</name>
+      <rarity>Rare</rarity>
+      <description>1d12 piercing, reach, special: You have disadvantage when you use a lance to attack a target within 5 feet of you. Also, a lance requires two hands to wield when you aren’t mounted.</description>
+      <price>10</price>
+      <type>Martial Melee Weapon</type>
+      <weight>6</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Longsword</name>
+      <rarity>Common</rarity>
+      <description>1d8 slashing, versatile</description>
+      <price>15</price>
+      <type>Martial Melee Weapon</type>
+      <weight>3</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Maul</name>
+      <rarity>Uncommon</rarity>
+      <description>2d6 bludgeoning, heavy, two-handed</description>
+      <price>10</price>
+      <type>Martial Melee Weapon</type>
+      <weight>10</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Morningstar</name>
+      <rarity>Uncommon</rarity>
+      <description>1d8 piercing</description>
+      <price>15</price>
+      <type>Martial Melee Weapon</type>
+      <weight>4</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Pike</name>
+      <rarity>Common</rarity>
+      <description>1d10 piercing, heavy, reach, two-handed</description>
+      <price>5</price>
+      <type>Martial Melee Weapon</type>
+      <weight>18</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Rapier</name>
+      <rarity>Rare</rarity>
+      <description>1d8 piercing, finesse</description>
+      <price>25</price>
+      <type>Martial Melee Weapon</type>
+      <weight>2</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Scimitar</name>
+      <rarity>Uncommon</rarity>
+      <description>1d6 slashing, finesse, light</description>
+      <price>25</price>
+      <type>Martial Melee Weapon</type>
+      <weight>3</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Shortsword</name>
+      <rarity>Common</rarity>
+      <description>1d6 piercing, finesse, light</description>
+      <price>10</price>
+      <type>Martial Melee Weapon</type>
+      <weight>2</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Trident</name>
+      <rarity>Rare</rarity>
+      <description>1d6 piercing, 20/60 range, thrown, versatile</description>
+      <price>5</price>
+      <type>Martial Melee Weapon</type>
+      <weight>4</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>War Pick</name>
+      <rarity>Uncommon</rarity>
+      <description>1d8 piercing</description>
+      <price>5</price>
+      <type>Martial Melee Weapon</type>
+      <weight>2</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Warhammer</name>
+      <rarity>Common</rarity>
+      <description>1d8 bludgeoning, versatile</description>
+      <price>15</price>
+      <type>Martial Melee Weapon</type>
+      <weight>2</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Ball Bearings (bag of 1,000)</name>
+      <rarity>Common</rarity>
+      <description>As an action, you can spill these tiny metal balls from their pouch to cover a level, square area that is 10 feet on a side. A creature moving across the covered area must succeed on a DC 10 Dexterity saving throw or fall prone. A creature moving through the area at half speed doesn’t need to make the save.</description>
+      <price>1</price>
+      <type>Adventuring Gear</type>
+      <weight>2</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Bell</name>
+      <rarity>Common</rarity>
+      <description>*Needs more cowbell.</description>
+      <price>1</price>
+      <type>Adventuring Gear</type>
+      <weight>0</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Block and Tackle</name>
+      <rarity>Uncoomon</rarity>
+      <description>A set of pulleys with a cable threaded through them and a hook to attach to objects, a block and tackle allows you to hoist up to four times the weight you can normally lift.</description>
+      <price>1</price>
+      <type>Adventuring Gear</type>
+      <weight>5</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Chain (10 feet)</name>
+      <rarity>Common</rarity>
+      <description>A chain has 10 hit points. It can be burst with a successful DC 20 Strength check.</description>
+      <price>5</price>
+      <type>Adventuring Gear</type>
+      <weight>10</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Crowbar</name>
+      <rarity>Common</rarity>
+      <description>Using a crowbar grants advantage to Strength checks where the crowbar’s leverage can be applied.</description>
+      <price>2</price>
+      <type>Adventuring Gear</type>
+      <weight>5</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Grappling Hook</name>
+      <rarity>Uncommon</rarity>
+      <description>You can use a grappling hook to anchor a rope in place. Throwing a grappling hook successfully requires a Use Rope check (DC 10, +2 per 10 feet of distance thrown). </description>
+      <price>2</price>
+      <type>Adventuring Gear</type>
+      <weight>4</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Hammer</name>
+      <rarity>Common</rarity>
+      <description>The weighty metal sledge atop the wooden haft can easily break rock apart.</description>
+      <price>1</price>
+      <type>Adventuring Gear</type>
+      <weight>3</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Hammer, Sledge</name>
+      <rarity>Uncommon</rarity>
+      <description>The weighty metal sledge atop the wooden haft can easily break rock apart.</description>
+      <price>2</price>
+      <type>Adventuring Gear</type>
+      <weight>10</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Hunting Trap</name>
+      <rarity>Common</rarity>
+      <description>When you use your action to set it, this trap forms a saw-toothed steel ring that snaps shut when a creature steps on a pressure plate in the center. The trap is affixed by a heavy chain to an immobile object, such as a tree or a spike driven into the ground. A creature that steps on the plate must succeed on a DC 13 Dexterity saving throw or take 1d4 piercing damage and stop moving. Thereafter, until the creature breaks free of the trap, its movement is limited by the length of the chain (typically 3 feet long). A creature can use its action to make a DC 13 Strength check, freeing itself or another creature within its reach on a success. Each failed check deals 1 piercing damage to the trapped creature.</description>
+      <price>5</price>
+      <type>Adventuring Gear</type>
+      <weight>25</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Lamp</name>
+      <rarity>Common</rarity>
+      <description>A lamp casts bright light in a 15-foot radius and dim light for an additional 30 feet. Once lit, it burns for 6 hours on a flask (1 pint) of oil.</description>
+      <price>0.5</price>
+      <type>Adventuring Gear</type>
+      <weight>1</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Lantern, Bullseye</name>
+      <rarity>Rare</rarity>
+      <description>A bullseye lantern casts bright light in a 60-foot cone and dim light for an additional 60 feet. Once lit, it burns for 6 hours on a flask (1 pint) of oil.</description>
+      <price>10</price>
+      <type>Adventuring Gear</type>
+      <weight>2</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Lantern, Hooded</name>
+      <rarity>Uncommon</rarity>
+      <description>A hooded lantern casts bright light in a 30-foot radius and dim light for an additional 30 feet. Once lit, it burns for 6 hours on a flask (1 pint) of oil. As an action, you can lower the hood, reducing the light to dim light in a 5-foot radius.</description>
+      <price>5</price>
+      <type>Adventuring Gear</type>
+      <weight>2</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Lock</name>
+      <rarity>Common</rarity>
+      <description>A key is provided with the lock. Without the key, a creature proficient with thieves’ tools can pick this lock with a successful DC 15 Dexterity check. Your GM may decide that better locks are available for higher prices.</description>
+      <price>10</price>
+      <type>Adventuring Gear</type>
+      <weight>1</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Manacles</name>
+      <rarity>Uncommon</rarity>
+      <description>These metal restraints can bind a Small or Medium creature. Escaping the manacles requires a successful DC 20 Dexterity check. Breaking them requires a successful DC 20 Strength check. Each set of manacles comes with one key. Without the key, a creature proficient with thieves’ tools can pick the manacles’ lock with a successful DC 15 Dexterity check. Manacles have 15 hit points.</description>
+      <price>2</price>
+      <type>Adventuring Gear</type>
+      <weight>6</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Mirror, Steel</name>
+      <rarity>Uncommon</rarity>
+      <description>*Who's the most beautiful PC in the land?</description>
+      <price>5</price>
+      <type>Adventuring Gear</type>
+      <weight>0.5</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Pick, Miner's</name>
+      <rarity>Common</rarity>
+      <description>Good for breaking apart stone or hard-packed earth, a miner's pick can be used as an improvised weapon that deals piercing damage.</description>
+      <price>2</price>
+      <type>Adventuring Gear</type>
+      <weight>10</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Piton</name>
+      <rarity>Common</rarity>
+      <description>Climbers hammer pitons into walls to create their own handholds. Pitons are also useful for spiking a door shut, causing the door to become stuck.</description>
+      <price>0.5</price>
+      <type>Adventuring Gear</type>
+      <weight>0.25</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Pot, Iron</name>
+      <rarity>Common</rarity>
+      <description>Good for cooking, an iron pot can hold up to a gallon of fluid. It can also serve as an improvised weapon.</description>
+      <price>2</price>
+      <type>Adventuring Gear</type>
+      <weight>10</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Spikes, Iron</name>
+      <rarity>Uncommon</rarity>
+      <description>*See Piton? Climbers hammer pitons into walls to create their own handholds. Pitons are also useful for spiking a door shut, causing the door to become stuck.</description>
+      <price>1</price>
+      <type>Adventuring Gear</type>
+      <weight>5</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Whetstone</name>
+      <rarity>Common</rarity>
+      <description>*During a short/long rest a fighter can whet a # of blades equal to his proficiency modifier. These blades, if in good condition, gain +1 damage on their next attack. If the blades are "broken" (i.e. in damaged condition but still repair-able), they are restored to working order. And aristocrats and knights might comment on the fine edge of the character's blades.</description>
+      <price>0.1</price>
+      <type>Adventuring Gear</type>
+      <weight>1</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Carpenter's Tools</name>
+      <rarity>Common</rarity>
+      <description>These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan’s tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan’s tools requires a separate proficiency.</description>
+      <price>8</price>
+      <type>Adventuring Gear</type>
+      <weight>6</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Mason's Tools</name>
+      <rarity>Uncommon</rarity>
+      <description>These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan’s tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan’s tools requires a separate proficiency.</description>
+      <price>10</price>
+      <type>Adventuring Gear</type>
+      <weight>8</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Smith's Tools</name>
+      <rarity>Common</rarity>
+      <description>These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan’s tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan’s tools requires a separate proficiency.</description>
+      <price>20</price>
+      <type>Adventuring Gear</type>
+      <weight>8</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Tinker's Tools</name>
+      <rarity>Rare</rarity>
+      <description>These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan’s tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan’s tools requires a separate proficiency.</description>
+      <price>50</price>
+      <type>Adventuring Gear</type>
+      <weight>10</weight>
+      <ref>SRD</ref>
+    </item>
+    <item>
+      <name>Horn</name>
+      <rarity>Rare</rarity>
+      <description>If you have proficiency with a given musical instrument, you can add your proficiency bonus to any ability checks you make to play music with the instrument. A bard can use a musical instrument as a spellcasting focus. Each type of musical instrument requires a separate proficiency.</description>
+      <price>3</price>
+      <type>Adventuring Gear</type>
+      <weight>2</weight>
+      <ref>SRD</ref>
+    </item>
+</data>
