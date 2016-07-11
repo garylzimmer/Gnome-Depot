@@ -41,6 +41,9 @@
 			this.storeTypeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.storeRefCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.storeBox = new System.Windows.Forms.GroupBox();
+			this.shopPricingLevelLabel = new System.Windows.Forms.Label();
+			this.shopPricingLevel = new System.Windows.Forms.ComboBox();
+			this.randomizePricesCheckBox = new System.Windows.Forms.CheckBox();
 			this.disabledLabel2 = new System.Windows.Forms.Label();
 			this.scGridView = new System.Windows.Forms.DataGridView();
 			this.scReturnCol = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -108,7 +111,7 @@
 			this.storeGridView.Name = "storeGridView";
 			this.storeGridView.ReadOnly = true;
 			this.storeGridView.RowHeadersVisible = false;
-			this.storeGridView.Size = new System.Drawing.Size(529, 289);
+			this.storeGridView.Size = new System.Drawing.Size(529, 264);
 			this.storeGridView.TabIndex = 0;
 			this.storeGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.storeGridView_CellContentClick);
 			// 
@@ -186,6 +189,9 @@
 			// 
 			// storeBox
 			// 
+			this.storeBox.Controls.Add(this.shopPricingLevelLabel);
+			this.storeBox.Controls.Add(this.shopPricingLevel);
+			this.storeBox.Controls.Add(this.randomizePricesCheckBox);
 			this.storeBox.Controls.Add(this.disabledLabel2);
 			this.storeBox.Controls.Add(this.storeGridView);
 			this.storeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -195,6 +201,40 @@
 			this.storeBox.TabIndex = 1;
 			this.storeBox.TabStop = false;
 			this.storeBox.Text = "Store Inventory";
+			// 
+			// shopPricingLevelLabel
+			// 
+			this.shopPricingLevelLabel.AutoSize = true;
+			this.shopPricingLevelLabel.Location = new System.Drawing.Point(325, 297);
+			this.shopPricingLevelLabel.Name = "shopPricingLevelLabel";
+			this.shopPricingLevelLabel.Size = new System.Drawing.Size(80, 13);
+			this.shopPricingLevelLabel.TabIndex = 21;
+			this.shopPricingLevelLabel.Text = "Shop Pricing is:";
+			// 
+			// shopPricingLevel
+			// 
+			this.shopPricingLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.shopPricingLevel.FormattingEnabled = true;
+			this.shopPricingLevel.Items.AddRange(new object[] {
+            "Cheap",
+            "Average",
+            "Expensive"});
+			this.shopPricingLevel.Location = new System.Drawing.Point(411, 294);
+			this.shopPricingLevel.Name = "shopPricingLevel";
+			this.shopPricingLevel.Size = new System.Drawing.Size(121, 21);
+			this.shopPricingLevel.TabIndex = 20;
+			this.shopPricingLevel.SelectedIndexChanged += new System.EventHandler(this.shopPricingLevel_SelectedIndexChanged);
+			// 
+			// randomizePricesCheckBox
+			// 
+			this.randomizePricesCheckBox.AutoSize = true;
+			this.randomizePricesCheckBox.Location = new System.Drawing.Point(7, 292);
+			this.randomizePricesCheckBox.Name = "randomizePricesCheckBox";
+			this.randomizePricesCheckBox.Size = new System.Drawing.Size(114, 17);
+			this.randomizePricesCheckBox.TabIndex = 19;
+			this.randomizePricesCheckBox.Text = "Randomize Pricing";
+			this.randomizePricesCheckBox.UseVisualStyleBackColor = true;
+			this.randomizePricesCheckBox.CheckedChanged += new System.EventHandler(this.randomizePrices_CheckedChanged);
 			// 
 			// disabledLabel2
 			// 
@@ -481,8 +521,6 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1178, 362);
-			this.Controls.Add(this.disabledPanel2);
-			this.Controls.Add(this.disabledPanel);
 			this.Controls.Add(this.calculateButton);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
@@ -493,11 +531,13 @@
 			this.Controls.Add(this.storeBox);
 			this.Controls.Add(this.scBox);
 			this.Controls.Add(this.menuStrip1);
+			this.Controls.Add(this.disabledPanel2);
+			this.Controls.Add(this.disabledPanel);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MainMenuStrip = this.menuStrip1;
 			this.MinimizeBox = false;
 			this.Name = "MainWindow";
-			this.Text = "RPG Magic Item Shop v1.4.2";
+			this.Text = "RPG Magic Item Shop v1.5";
 			this.Load += new System.EventHandler(this.Form_Load);
 			((System.ComponentModel.ISupportInitialize)(this.ItemDataSet)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.storeGridView)).EndInit();
@@ -558,6 +598,9 @@
 		private System.Windows.Forms.Label arrow2label;
 		private System.Windows.Forms.Label disabledLabel1;
 		private System.Windows.Forms.Label arrow1label;
+		private System.Windows.Forms.CheckBox randomizePricesCheckBox;
+		private System.Windows.Forms.Label shopPricingLevelLabel;
+		private System.Windows.Forms.ComboBox shopPricingLevel;
 	}
 }
 

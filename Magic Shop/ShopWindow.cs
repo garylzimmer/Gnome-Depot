@@ -15,7 +15,11 @@ namespace Magic_Shop
         private DataSet itemsDS;
         Random rndQty = new Random();
 		string windowTitle;
-        public MainWindow()
+		Random rndPrice = new Random();
+		//save the original price list into an array for the random price functionality
+		List<decimal> origStorePriceList = new List<decimal>();
+
+		public MainWindow()
         {
             InitializeComponent();
         }
@@ -24,27 +28,30 @@ namespace Magic_Shop
         {
 			windowTitle = this.Text;
 			itemsDS = new DataSet("ItemDataSet");
+									//attempt to load XML path on form load, doesn't work, don't know why
+									//itemsDS.ReadXml(XMLfilePath);
 
-            //attempt to load XML path on form load, doesn't work, don't know why
-            //itemsDS.ReadXml(XMLfilePath);
-
-            //attempt to turn off autogenerating columns, doesn't work, don't know why
-            //storeGridView.AutoGenerateColumns = false;
-            //storeGridView.DataSource = ItemDataSet;
-           // storeGridView.DataMember = "item";
-            //DataGridViewLinkColumn itemColumn = new DataGridViewLinkColumn();
-            //storeGridView.AllowUserToAddRows = false;
-           // scGridView.AllowUserToAddRows = false;
-            //scGridView.AutoGenerateColumns = false;
-			//disabledPanel.Visible = true;
-			//disabledPanel.BringToFront();
+			//attempt to turn off autogenerating columns, doesn't work, don't know why
+			//storeGridView.AutoGenerateColumns = false;
+			//storeGridView.DataSource = ItemDataSet;
+			// storeGridView.DataMember = "item";
+			//DataGridViewLinkColumn itemColumn = new DataGridViewLinkColumn();
+			//storeGridView.AllowUserToAddRows = false;
+			// scGridView.AllowUserToAddRows = false;
+			//scGridView.AutoGenerateColumns = false;
+			disabledPanel.Visible = true;
+			disabledPanel.BringToFront();
+			disabledPanel2.Visible = true;
+			disabledPanel2.BringToFront();
+			//preselect the average pricing level
+			//shopPricingLevel.SelectedIndex = 1;
 
 		}
 
         private string GetItemRarity(int RowNum)
         {
             //get item rarity by looking in column named 'storeRarityCol' for that cell
-            string itemRarity = (string)storeGridView.Rows[RowNum].Cells["storeRarityCol"].Value;
+            string itemRarity = storeGridView.Rows[RowNum].Cells["storeRarityCol"].Value.ToString();
             return itemRarity;
         }
 
@@ -125,20 +132,32 @@ namespace Magic_Shop
                 {
                     storeGridView.Rows[row].Cells["storeQuantityCol"].Value = 0;
                 }
+				//enable functionality
 				calculateButton.Enabled = true;
 				generateShopMenuItem.Enabled = true;
 				scGridView.Enabled = true;
 				storeGridView.Enabled = true;
+				//hide the instructional elements
 				disabledLabel1.Enabled = false;
 				disabledLabel1.Text = "";
 				disabledLabel2.Enabled = false;
 				disabledLabel2.Text = "";
+				//hide the panels covering functionality
 				disabledPanel.Visible = false;
 				disabledLabel4.Visible = true;
 				arrow1label.Visible = false;
 				arrow2label.Visible = true;
 
+
+
+				int storeRowCount = storeGridView.RowCount;
+				for (int i = 0; i < storeRowCount; i++)
+				{
+					origStorePriceList.Add(Convert.ToDecimal(storeGridView.Rows[i].Cells["storePriceCol"].Value.ToString()));
+				}
+
 				this.Activate();
+
 
             }
 
@@ -366,21 +385,21 @@ namespace Magic_Shop
 
         private void calculateButton_Click(object sender, EventArgs e)
         {
-            int totalInCart = 0;
+            decimal totalInCart = 0;
             int numOfSCRows = scGridView.RowCount;
             if(numOfSCRows>0)
             {
                 for (int i = 0; i < numOfSCRows; i++)
                 {
-                    int priceInRow = Int32.Parse(scGridView.Rows[i].Cells["scPriceCol"].Value.ToString());
+                    decimal priceInRow = Convert.ToDecimal(scGridView.Rows[i].Cells["scPriceCol"].Value.ToString());
                     int qtyInRow = Int32.Parse(scGridView.Rows[i].Cells["scQuantityCol"].Value.ToString());
-                    int totalInRow = priceInRow * qtyInRow;
+                    decimal totalInRow = priceInRow * qtyInRow;
                     totalInCart += totalInRow;
                 }
                 scTotalTextBox.Text = totalInCart.ToString();
                 try
                 {
-                    int endingGP = Int32.Parse(startingGPTextBox.Text) - totalInCart;
+                    decimal endingGP = Int32.Parse(startingGPTextBox.Text) - totalInCart;
                     endingGPTextBox.Text = endingGP.ToString();
                     return;
                 }
@@ -436,6 +455,61 @@ namespace Magic_Shop
 		{
 			EditXML myEditXML = new EditXML();
 			myEditXML.Show();
+		}
+
+		private decimal randomizeItemPrice(int rownum)
+		{
+			string itemRarity = GetItemRarity(rownum);
+			decimal priceMultiplier = 0;
+			decimal itemPrice = origStorePriceList[rownum];
+			switch(shopPricingLevel.Text)
+			{
+				case "Cheap":
+					priceMultiplier = rndPrice.Next(50, 101);
+					break;
+				case "Average":
+					priceMultiplier = rndPrice.Next(75, 126);
+					break;
+				case "Expensive":
+					priceMultiplier = rndPrice.Next(115, 156);
+					break;
+				default:
+					priceMultiplier = 1M;
+					break;
+			}
+			//(priceMultiplier/100)*itemPrice
+			return decimal.Multiply(decimal.Divide(priceMultiplier, 100m),itemPrice);
+		}
+
+
+		private void randomizeStorePrices()
+		{
+			if(randomizePricesCheckBox.Checked == true)
+			{
+				int storeRowCount = storeGridView.RowCount;
+				for (int i = 0; i<storeRowCount; i++)
+				{
+					storeGridView.Rows[i].Cells["storePriceCol"].Value = randomizeItemPrice(i);
+				}
+			}
+			else
+			{
+				for (int i = 0; i < storeGridView.RowCount; i++)
+				{
+					storeGridView.Rows[i].Cells["storePriceCol"].Value = origStorePriceList[i];
+				}
+			}
+		}
+
+		private void randomizePrices_CheckedChanged(object sender, EventArgs e)
+		{
+			randomizeStorePrices();
+		}
+
+		private void shopPricingLevel_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			randomizeStorePrices();
+
 		}
 	}
 
