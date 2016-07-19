@@ -89,6 +89,7 @@
     <Compile Include="EditXML.Designer.cs">
       <DependentUpon>EditXML.cs</DependentUpon>
     </Compile>
+    <Compile Include="Names.cs" />
     <Compile Include="ShopWindow.cs">
       <SubType>Form</SubType>
     </Compile>

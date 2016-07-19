@@ -19,7 +19,7 @@ namespace Magic_Shop
 
 		private void githublinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
-			System.Diagnostics.Process.Start("https://github.com/garylzimmer/Magic-Shop/");
+			System.Diagnostics.Process.Start("https://github.com/garylzimmer/Gnome-Depot");
 		}
 
 		private void pictureBox1_Click(object sender, EventArgs e)

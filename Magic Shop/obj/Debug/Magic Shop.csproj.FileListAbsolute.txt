@@ -1,0 +1,25 @@
+c:\users\champ66\documents\visual studio 2015\Projects\Magic Shop\Magic Shop\bin\Debug\Magic Shop.exe.config
+c:\users\champ66\documents\visual studio 2015\Projects\Magic Shop\Magic Shop\obj\Debug\Magic Shop.csprojResolveAssemblyReference.cache
+c:\users\champ66\documents\visual studio 2015\Projects\Magic Shop\Magic Shop\obj\Debug\Magic_Shop.MainWindow.resources
+c:\users\champ66\documents\visual studio 2015\Projects\Magic Shop\Magic Shop\obj\Debug\Magic_Shop.Properties.Resources.resources
+c:\users\champ66\documents\visual studio 2015\Projects\Magic Shop\Magic Shop\obj\Debug\Magic Shop.csproj.GenerateResource.Cache
+c:\users\champ66\documents\visual studio 2015\Projects\Magic Shop\Magic Shop\bin\Debug\Magic Shop.exe
+c:\users\champ66\documents\visual studio 2015\Projects\Magic Shop\Magic Shop\bin\Debug\Magic Shop.pdb
+c:\users\champ66\documents\visual studio 2015\Projects\Magic Shop\Magic Shop\obj\Debug\Magic Shop.exe
+c:\users\champ66\documents\visual studio 2015\Projects\Magic Shop\Magic Shop\obj\Debug\Magic Shop.pdb
+C:\Users\Champ66\Documents\Visual Studio 2015\Projects\Magic Shop\Magic-Shop\Magic Shop\bin\Debug\Magic Shop.exe.config
+C:\Users\Champ66\Documents\Visual Studio 2015\Projects\Magic Shop\Magic-Shop\Magic Shop\bin\Debug\Magic Shop.exe.manifest
+C:\Users\Champ66\Documents\Visual Studio 2015\Projects\Magic Shop\Magic-Shop\Magic Shop\bin\Debug\Magic Shop.application
+C:\Users\Champ66\Documents\Visual Studio 2015\Projects\Magic Shop\Magic-Shop\Magic Shop\bin\Debug\Magic Shop.exe
+C:\Users\Champ66\Documents\Visual Studio 2015\Projects\Magic Shop\Magic-Shop\Magic Shop\bin\Debug\Magic Shop.pdb
+C:\Users\Champ66\Documents\Visual Studio 2015\Projects\Magic Shop\Magic-Shop\Magic Shop\obj\Debug\Magic_Shop.About.resources
+C:\Users\Champ66\Documents\Visual Studio 2015\Projects\Magic Shop\Magic-Shop\Magic Shop\obj\Debug\Magic_Shop.EditXML.resources
+C:\Users\Champ66\Documents\Visual Studio 2015\Projects\Magic Shop\Magic-Shop\Magic Shop\obj\Debug\Magic_Shop.MainWindow.resources
+C:\Users\Champ66\Documents\Visual Studio 2015\Projects\Magic Shop\Magic-Shop\Magic Shop\obj\Debug\Magic_Shop.ItemDetails.resources
+C:\Users\Champ66\Documents\Visual Studio 2015\Projects\Magic Shop\Magic-Shop\Magic Shop\obj\Debug\Magic_Shop.Properties.Resources.resources
+C:\Users\Champ66\Documents\Visual Studio 2015\Projects\Magic Shop\Magic-Shop\Magic Shop\obj\Debug\Magic Shop.csproj.GenerateResource.Cache
+C:\Users\Champ66\Documents\Visual Studio 2015\Projects\Magic Shop\Magic-Shop\Magic Shop\obj\Debug\Magic Shop.exe.manifest
+C:\Users\Champ66\Documents\Visual Studio 2015\Projects\Magic Shop\Magic-Shop\Magic Shop\obj\Debug\Magic Shop.application
+C:\Users\Champ66\Documents\Visual Studio 2015\Projects\Magic Shop\Magic-Shop\Magic Shop\obj\Debug\Magic Shop.exe
+C:\Users\Champ66\Documents\Visual Studio 2015\Projects\Magic Shop\Magic-Shop\Magic Shop\obj\Debug\Magic Shop.pdb
+C:\Users\Champ66\Documents\Visual Studio 2015\Projects\Magic Shop\Magic-Shop\Magic Shop\obj\Debug\Magic Shop.csprojResolveAssemblyReference.cache

@@ -117,6 +117,7 @@
 			this.newXMLFileToolStripMenuItem.Name = "newXMLFileToolStripMenuItem";
 			this.newXMLFileToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
 			this.newXMLFileToolStripMenuItem.Text = "New XML File";
+			this.newXMLFileToolStripMenuItem.Click += new System.EventHandler(this.newXMLFileToolStripMenuItem_Click);
 			// 
 			// openXMLFileToolStripMenuItem
 			// 

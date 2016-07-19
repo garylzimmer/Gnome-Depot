@@ -31,20 +31,11 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
 			this.ItemDataSet = new System.Data.DataSet();
 			this.storeGridView = new System.Windows.Forms.DataGridView();
-			this.storeBuyCol = new System.Windows.Forms.DataGridViewButtonColumn();
-			this.storeQuantityCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.storeItemNameCol = new System.Windows.Forms.DataGridViewLinkColumn();
-			this.storePriceCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.storeRarityCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.storeDescriptionCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.storeWeightCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.storeTypeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.storeRefCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.storeBox = new System.Windows.Forms.GroupBox();
+			this.label4 = new System.Windows.Forms.Label();
 			this.shopPricingLevelLabel = new System.Windows.Forms.Label();
 			this.shopPricingLevel = new System.Windows.Forms.ComboBox();
 			this.randomizePricesCheckBox = new System.Windows.Forms.CheckBox();
-			this.disabledLabel2 = new System.Windows.Forms.Label();
 			this.scGridView = new System.Windows.Forms.DataGridView();
 			this.scReturnCol = new System.Windows.Forms.DataGridViewButtonColumn();
 			this.scQuantityCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,9 +55,20 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this.calculateButton = new System.Windows.Forms.Button();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-			this.openXMLFileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.generateShopMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.editXMLFileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.fileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.openStoreArchetypeXMLFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+			this.loadPreGeneratedStoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.saveThisGeneratedStoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+			this.editXMLFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.generateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.storeNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.randomStoreNameToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			this.uniqueStoreNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.storeInventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.aboutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.disabledPanel = new System.Windows.Forms.Panel();
 			this.disabledPanel2 = new System.Windows.Forms.Panel();
@@ -74,6 +76,16 @@
 			this.arrow2label = new System.Windows.Forms.Label();
 			this.disabledLabel1 = new System.Windows.Forms.Label();
 			this.arrow1label = new System.Windows.Forms.Label();
+			this.storeNameLabel = new System.Windows.Forms.Label();
+			this.storeBuyCol = new System.Windows.Forms.DataGridViewButtonColumn();
+			this.storeQuantityCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.storeItemNameCol = new System.Windows.Forms.DataGridViewLinkColumn();
+			this.storePriceCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.storeRarityCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.storeDescriptionCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.storeWeightCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.storeTypeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.storeRefCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.ItemDataSet)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.storeGridView)).BeginInit();
 			this.storeBox.SuspendLayout();
@@ -105,94 +117,20 @@
             this.storeTypeCol,
             this.storeRefCol});
 			this.storeGridView.DataSource = this.ItemDataSet;
-			this.storeGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-			this.storeGridView.Enabled = false;
+			this.storeGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
 			this.storeGridView.Location = new System.Drawing.Point(6, 21);
 			this.storeGridView.Name = "storeGridView";
-			this.storeGridView.ReadOnly = true;
 			this.storeGridView.RowHeadersVisible = false;
 			this.storeGridView.Size = new System.Drawing.Size(529, 264);
 			this.storeGridView.TabIndex = 0;
 			this.storeGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.storeGridView_CellContentClick);
 			// 
-			// storeBuyCol
-			// 
-			this.storeBuyCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.storeBuyCol.HeaderText = "Buy?";
-			this.storeBuyCol.Name = "storeBuyCol";
-			this.storeBuyCol.ReadOnly = true;
-			this.storeBuyCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-			this.storeBuyCol.Text = "Buy";
-			this.storeBuyCol.UseColumnTextForButtonValue = true;
-			this.storeBuyCol.Width = 37;
-			// 
-			// storeQuantityCol
-			// 
-			this.storeQuantityCol.HeaderText = "Quantity";
-			this.storeQuantityCol.Name = "storeQuantityCol";
-			this.storeQuantityCol.ReadOnly = true;
-			// 
-			// storeItemNameCol
-			// 
-			this.storeItemNameCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.storeItemNameCol.DataPropertyName = "name";
-			this.storeItemNameCol.HeaderText = "Item Name";
-			this.storeItemNameCol.Name = "storeItemNameCol";
-			this.storeItemNameCol.ReadOnly = true;
-			this.storeItemNameCol.Width = 64;
-			// 
-			// storePriceCol
-			// 
-			this.storePriceCol.DataPropertyName = "price";
-			this.storePriceCol.HeaderText = "Price (GP)";
-			this.storePriceCol.Name = "storePriceCol";
-			this.storePriceCol.ReadOnly = true;
-			// 
-			// storeRarityCol
-			// 
-			this.storeRarityCol.DataPropertyName = "rarity";
-			this.storeRarityCol.HeaderText = "Rarity";
-			this.storeRarityCol.Name = "storeRarityCol";
-			this.storeRarityCol.ReadOnly = true;
-			// 
-			// storeDescriptionCol
-			// 
-			this.storeDescriptionCol.DataPropertyName = "description";
-			this.storeDescriptionCol.HeaderText = "Description";
-			this.storeDescriptionCol.Name = "storeDescriptionCol";
-			this.storeDescriptionCol.ReadOnly = true;
-			this.storeDescriptionCol.Visible = false;
-			// 
-			// storeWeightCol
-			// 
-			this.storeWeightCol.DataPropertyName = "weight";
-			this.storeWeightCol.HeaderText = "Weight (lbs)";
-			this.storeWeightCol.Name = "storeWeightCol";
-			this.storeWeightCol.ReadOnly = true;
-			this.storeWeightCol.Visible = false;
-			// 
-			// storeTypeCol
-			// 
-			this.storeTypeCol.DataPropertyName = "type";
-			this.storeTypeCol.HeaderText = "Type";
-			this.storeTypeCol.Name = "storeTypeCol";
-			this.storeTypeCol.ReadOnly = true;
-			this.storeTypeCol.Visible = false;
-			// 
-			// storeRefCol
-			// 
-			this.storeRefCol.DataPropertyName = "ref";
-			this.storeRefCol.HeaderText = "Reference";
-			this.storeRefCol.Name = "storeRefCol";
-			this.storeRefCol.ReadOnly = true;
-			this.storeRefCol.Visible = false;
-			// 
 			// storeBox
 			// 
+			this.storeBox.Controls.Add(this.label4);
 			this.storeBox.Controls.Add(this.shopPricingLevelLabel);
 			this.storeBox.Controls.Add(this.shopPricingLevel);
 			this.storeBox.Controls.Add(this.randomizePricesCheckBox);
-			this.storeBox.Controls.Add(this.disabledLabel2);
 			this.storeBox.Controls.Add(this.storeGridView);
 			this.storeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.storeBox.Location = new System.Drawing.Point(634, 27);
@@ -201,6 +139,15 @@
 			this.storeBox.TabIndex = 1;
 			this.storeBox.TabStop = false;
 			this.storeBox.Text = "Store Inventory";
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Location = new System.Drawing.Point(149, 297);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(153, 13);
+			this.label4.TabIndex = 22;
+			this.label4.Text = "Doubleclick or F2 to Edit Fields";
 			// 
 			// shopPricingLevelLabel
 			// 
@@ -235,15 +182,6 @@
 			this.randomizePricesCheckBox.Text = "Randomize Pricing";
 			this.randomizePricesCheckBox.UseVisualStyleBackColor = true;
 			this.randomizePricesCheckBox.CheckedChanged += new System.EventHandler(this.randomizePrices_CheckedChanged);
-			// 
-			// disabledLabel2
-			// 
-			this.disabledLabel2.AutoSize = true;
-			this.disabledLabel2.Location = new System.Drawing.Point(161, 0);
-			this.disabledLabel2.Name = "disabledLabel2";
-			this.disabledLabel2.Size = new System.Drawing.Size(180, 13);
-			this.disabledLabel2.TabIndex = 18;
-			this.disabledLabel2.Text = "Disabled until an XML File is chosen.";
 			// 
 			// scGridView
 			// 
@@ -280,11 +218,11 @@
 			// 
 			// scQuantityCol
 			// 
-			this.scQuantityCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-			this.scQuantityCol.HeaderText = "Quantity";
+			this.scQuantityCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+			this.scQuantityCol.HeaderText = "Qty";
 			this.scQuantityCol.Name = "scQuantityCol";
 			this.scQuantityCol.ReadOnly = true;
-			this.scQuantityCol.Width = 50;
+			this.scQuantityCol.Width = 48;
 			// 
 			// scItemNameCol
 			// 
@@ -340,9 +278,9 @@
 			// 
 			this.scBox.Controls.Add(this.scGridView);
 			this.scBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.scBox.Location = new System.Drawing.Point(113, 27);
+			this.scBox.Location = new System.Drawing.Point(113, 29);
 			this.scBox.Name = "scBox";
-			this.scBox.Size = new System.Drawing.Size(515, 327);
+			this.scBox.Size = new System.Drawing.Size(515, 325);
 			this.scBox.TabIndex = 3;
 			this.scBox.TabStop = false;
 			this.scBox.Text = "Shopping Cart";
@@ -353,7 +291,7 @@
 			this.startingGPTextBox.Name = "startingGPTextBox";
 			this.startingGPTextBox.Size = new System.Drawing.Size(100, 20);
 			this.startingGPTextBox.TabIndex = 7;
-			this.startingGPTextBox.Text = "Starting GP";
+			this.startingGPTextBox.Text = "0";
 			// 
 			// scTotalTextBox
 			// 
@@ -413,9 +351,8 @@
 			// 
 			this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openXMLFileMenuItem,
-            this.generateShopMenuItem,
-            this.editXMLFileMenuItem,
+            this.fileMenuItem,
+            this.generateToolStripMenuItem,
             this.aboutMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
@@ -424,28 +361,111 @@
 			this.menuStrip1.TabStop = true;
 			this.menuStrip1.Text = "menuStrip1";
 			// 
-			// openXMLFileMenuItem
+			// fileMenuItem
 			// 
-			this.openXMLFileMenuItem.Name = "openXMLFileMenuItem";
-			this.openXMLFileMenuItem.Size = new System.Drawing.Size(96, 20);
-			this.openXMLFileMenuItem.Text = "Open XML File";
-			this.openXMLFileMenuItem.Click += new System.EventHandler(this.readXMLFileMenuItem_Click);
+			this.fileMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openStoreArchetypeXMLFileToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.loadPreGeneratedStoreToolStripMenuItem,
+            this.saveThisGeneratedStoreToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.editXMLFileToolStripMenuItem,
+            this.toolStripSeparator3,
+            this.exitToolStripMenuItem});
+			this.fileMenuItem.Name = "fileMenuItem";
+			this.fileMenuItem.Size = new System.Drawing.Size(37, 20);
+			this.fileMenuItem.Text = "File";
 			// 
-			// generateShopMenuItem
+			// openStoreArchetypeXMLFileToolStripMenuItem
 			// 
-			this.generateShopMenuItem.BackColor = System.Drawing.SystemColors.Control;
-			this.generateShopMenuItem.Enabled = false;
-			this.generateShopMenuItem.Name = "generateShopMenuItem";
-			this.generateShopMenuItem.Size = new System.Drawing.Size(149, 20);
-			this.generateShopMenuItem.Text = "Generate Shop Inventory";
-			this.generateShopMenuItem.Click += new System.EventHandler(this.generateShopMenuItem_Click);
+			this.openStoreArchetypeXMLFileToolStripMenuItem.Name = "openStoreArchetypeXMLFileToolStripMenuItem";
+			this.openStoreArchetypeXMLFileToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+			this.openStoreArchetypeXMLFileToolStripMenuItem.Text = "Open Store Archetype XML file";
+			this.openStoreArchetypeXMLFileToolStripMenuItem.Click += new System.EventHandler(this.openStoreArchetypeXMLFileToolStripMenuItem_Click);
 			// 
-			// editXMLFileMenuItem
+			// toolStripSeparator2
 			// 
-			this.editXMLFileMenuItem.Name = "editXMLFileMenuItem";
-			this.editXMLFileMenuItem.Size = new System.Drawing.Size(87, 20);
-			this.editXMLFileMenuItem.Text = "Edit XML File";
-			this.editXMLFileMenuItem.Click += new System.EventHandler(this.editXMLFileMenuItem_Click);
+			this.toolStripSeparator2.Name = "toolStripSeparator2";
+			this.toolStripSeparator2.Size = new System.Drawing.Size(233, 6);
+			// 
+			// loadPreGeneratedStoreToolStripMenuItem
+			// 
+			this.loadPreGeneratedStoreToolStripMenuItem.Enabled = false;
+			this.loadPreGeneratedStoreToolStripMenuItem.Name = "loadPreGeneratedStoreToolStripMenuItem";
+			this.loadPreGeneratedStoreToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+			this.loadPreGeneratedStoreToolStripMenuItem.Text = "Load Pre-Generated Store";
+			// 
+			// saveThisGeneratedStoreToolStripMenuItem
+			// 
+			this.saveThisGeneratedStoreToolStripMenuItem.Enabled = false;
+			this.saveThisGeneratedStoreToolStripMenuItem.Name = "saveThisGeneratedStoreToolStripMenuItem";
+			this.saveThisGeneratedStoreToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+			this.saveThisGeneratedStoreToolStripMenuItem.Text = "Save This Generated Store";
+			this.saveThisGeneratedStoreToolStripMenuItem.Click += new System.EventHandler(this.saveThisGeneratedStoreToolStripMenuItem_Click);
+			// 
+			// toolStripSeparator1
+			// 
+			this.toolStripSeparator1.Name = "toolStripSeparator1";
+			this.toolStripSeparator1.Size = new System.Drawing.Size(233, 6);
+			// 
+			// editXMLFileToolStripMenuItem
+			// 
+			this.editXMLFileToolStripMenuItem.Name = "editXMLFileToolStripMenuItem";
+			this.editXMLFileToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+			this.editXMLFileToolStripMenuItem.Text = "Edit XML File";
+			this.editXMLFileToolStripMenuItem.Click += new System.EventHandler(this.editXMLFileToolStripMenuItem_Click);
+			// 
+			// toolStripSeparator3
+			// 
+			this.toolStripSeparator3.Name = "toolStripSeparator3";
+			this.toolStripSeparator3.Size = new System.Drawing.Size(233, 6);
+			// 
+			// exitToolStripMenuItem
+			// 
+			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+			this.exitToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+			this.exitToolStripMenuItem.Text = "Exit";
+			this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+			// 
+			// generateToolStripMenuItem
+			// 
+			this.generateToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.storeNameToolStripMenuItem,
+            this.storeInventoryToolStripMenuItem});
+			this.generateToolStripMenuItem.Enabled = false;
+			this.generateToolStripMenuItem.Name = "generateToolStripMenuItem";
+			this.generateToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+			this.generateToolStripMenuItem.Text = "Generate";
+			// 
+			// storeNameToolStripMenuItem
+			// 
+			this.storeNameToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.randomStoreNameToolStripMenuItem1,
+            this.uniqueStoreNameToolStripMenuItem});
+			this.storeNameToolStripMenuItem.Name = "storeNameToolStripMenuItem";
+			this.storeNameToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+			this.storeNameToolStripMenuItem.Text = "Store Name";
+			// 
+			// randomStoreNameToolStripMenuItem1
+			// 
+			this.randomStoreNameToolStripMenuItem1.Name = "randomStoreNameToolStripMenuItem1";
+			this.randomStoreNameToolStripMenuItem1.Size = new System.Drawing.Size(184, 22);
+			this.randomStoreNameToolStripMenuItem1.Text = "Random Store Name";
+			this.randomStoreNameToolStripMenuItem1.Click += new System.EventHandler(this.randomStoreNameToolStripMenuItem1_Click);
+			// 
+			// uniqueStoreNameToolStripMenuItem
+			// 
+			this.uniqueStoreNameToolStripMenuItem.Name = "uniqueStoreNameToolStripMenuItem";
+			this.uniqueStoreNameToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+			this.uniqueStoreNameToolStripMenuItem.Text = "Unique Store Name";
+			this.uniqueStoreNameToolStripMenuItem.Click += new System.EventHandler(this.uniqueStoreNameToolStripMenuItem_Click);
+			// 
+			// storeInventoryToolStripMenuItem
+			// 
+			this.storeInventoryToolStripMenuItem.Name = "storeInventoryToolStripMenuItem";
+			this.storeInventoryToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+			this.storeInventoryToolStripMenuItem.Text = "Store Inventory";
+			this.storeInventoryToolStripMenuItem.Click += new System.EventHandler(this.storeInventoryToolStripMenuItem_Click);
 			// 
 			// aboutMenuItem
 			// 
@@ -478,18 +498,19 @@
 			// 
 			this.disabledLabel4.AutoSize = true;
 			this.disabledLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.disabledLabel4.Location = new System.Drawing.Point(194, 77);
+			this.disabledLabel4.Location = new System.Drawing.Point(114, 62);
 			this.disabledLabel4.Name = "disabledLabel4";
-			this.disabledLabel4.Size = new System.Drawing.Size(318, 25);
+			this.disabledLabel4.Size = new System.Drawing.Size(351, 25);
 			this.disabledLabel4.TabIndex = 6;
-			this.disabledLabel4.Text = "Click \"Generate Shop Inventory\"";
+			this.disabledLabel4.Text = "Click \"Generate\" > \"Store Inventory\"";
 			this.disabledLabel4.Visible = false;
+			this.disabledLabel4.Click += new System.EventHandler(this.disabledLabel4_Click);
 			// 
 			// arrow2label
 			// 
 			this.arrow2label.AutoSize = true;
 			this.arrow2label.Font = new System.Drawing.Font("Wingdings", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-			this.arrow2label.Location = new System.Drawing.Point(127, -4);
+			this.arrow2label.Location = new System.Drawing.Point(38, -4);
 			this.arrow2label.Name = "arrow2label";
 			this.arrow2label.Size = new System.Drawing.Size(98, 106);
 			this.arrow2label.TabIndex = 5;
@@ -502,25 +523,112 @@
 			this.disabledLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.disabledLabel1.Location = new System.Drawing.Point(74, 47);
 			this.disabledLabel1.Name = "disabledLabel1";
-			this.disabledLabel1.Size = new System.Drawing.Size(465, 25);
+			this.disabledLabel1.Size = new System.Drawing.Size(326, 25);
 			this.disabledLabel1.TabIndex = 3;
-			this.disabledLabel1.Text = "Open an XML file with items formatted properly.";
+			this.disabledLabel1.Text = "Open a Store Archetype XML file";
+			this.disabledLabel1.Click += new System.EventHandler(this.disabledLabel1_Click);
 			// 
 			// arrow1label
 			// 
 			this.arrow1label.AutoSize = true;
 			this.arrow1label.Font = new System.Drawing.Font("Wingdings", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-			this.arrow1label.Location = new System.Drawing.Point(8, -4);
+			this.arrow1label.Location = new System.Drawing.Point(-18, -5);
 			this.arrow1label.Name = "arrow1label";
 			this.arrow1label.Size = new System.Drawing.Size(98, 106);
 			this.arrow1label.TabIndex = 4;
 			this.arrow1label.Text = "G";
+			// 
+			// storeNameLabel
+			// 
+			this.storeNameLabel.AutoSize = true;
+			this.storeNameLabel.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.storeNameLabel.Location = new System.Drawing.Point(846, 0);
+			this.storeNameLabel.Name = "storeNameLabel";
+			this.storeNameLabel.Size = new System.Drawing.Size(69, 33);
+			this.storeNameLabel.TabIndex = 15;
+			this.storeNameLabel.Text = "Store";
+			// 
+			// storeBuyCol
+			// 
+			this.storeBuyCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.storeBuyCol.HeaderText = "Buy?";
+			this.storeBuyCol.Name = "storeBuyCol";
+			this.storeBuyCol.ReadOnly = true;
+			this.storeBuyCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			this.storeBuyCol.Text = "Buy";
+			this.storeBuyCol.UseColumnTextForButtonValue = true;
+			this.storeBuyCol.Width = 37;
+			// 
+			// storeQuantityCol
+			// 
+			this.storeQuantityCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+			this.storeQuantityCol.DataPropertyName = "qty";
+			this.storeQuantityCol.HeaderText = "Qty";
+			this.storeQuantityCol.Name = "storeQuantityCol";
+			this.storeQuantityCol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+			this.storeQuantityCol.Width = 29;
+			// 
+			// storeItemNameCol
+			// 
+			this.storeItemNameCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.storeItemNameCol.DataPropertyName = "name";
+			this.storeItemNameCol.HeaderText = "Item Name";
+			this.storeItemNameCol.Name = "storeItemNameCol";
+			this.storeItemNameCol.TrackVisitedState = false;
+			this.storeItemNameCol.Width = 64;
+			// 
+			// storePriceCol
+			// 
+			this.storePriceCol.DataPropertyName = "price";
+			this.storePriceCol.HeaderText = "Price (GP)";
+			this.storePriceCol.Name = "storePriceCol";
+			this.storePriceCol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+			// 
+			// storeRarityCol
+			// 
+			this.storeRarityCol.DataPropertyName = "rarity";
+			this.storeRarityCol.HeaderText = "Rarity";
+			this.storeRarityCol.Name = "storeRarityCol";
+			this.storeRarityCol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+			// 
+			// storeDescriptionCol
+			// 
+			this.storeDescriptionCol.DataPropertyName = "description";
+			this.storeDescriptionCol.HeaderText = "Description";
+			this.storeDescriptionCol.Name = "storeDescriptionCol";
+			this.storeDescriptionCol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+			this.storeDescriptionCol.Visible = false;
+			// 
+			// storeWeightCol
+			// 
+			this.storeWeightCol.DataPropertyName = "weight";
+			this.storeWeightCol.HeaderText = "Weight (lbs)";
+			this.storeWeightCol.Name = "storeWeightCol";
+			this.storeWeightCol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+			// 
+			// storeTypeCol
+			// 
+			this.storeTypeCol.DataPropertyName = "type";
+			this.storeTypeCol.HeaderText = "Type";
+			this.storeTypeCol.Name = "storeTypeCol";
+			this.storeTypeCol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+			this.storeTypeCol.Visible = false;
+			// 
+			// storeRefCol
+			// 
+			this.storeRefCol.DataPropertyName = "ref";
+			this.storeRefCol.HeaderText = "Reference";
+			this.storeRefCol.Name = "storeRefCol";
+			this.storeRefCol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+			this.storeRefCol.Visible = false;
 			// 
 			// MainWindow
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1178, 362);
+			this.Controls.Add(this.storeNameLabel);
 			this.Controls.Add(this.calculateButton);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
@@ -533,11 +641,12 @@
 			this.Controls.Add(this.menuStrip1);
 			this.Controls.Add(this.disabledPanel2);
 			this.Controls.Add(this.disabledPanel);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MainMenuStrip = this.menuStrip1;
 			this.MinimizeBox = false;
 			this.Name = "MainWindow";
-			this.Text = "RPG Magic Item Shop v1.5";
+			this.Text = "Gnome Depot v1.7";
 			this.Load += new System.EventHandler(this.Form_Load);
 			((System.ComponentModel.ISupportInitialize)(this.ItemDataSet)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.storeGridView)).EndInit();
@@ -568,30 +677,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button calculateButton;
-		private System.Windows.Forms.DataGridViewButtonColumn scReturnCol;
-		private System.Windows.Forms.DataGridViewTextBoxColumn scQuantityCol;
-		private System.Windows.Forms.DataGridViewLinkColumn scItemNameCol;
-		private System.Windows.Forms.DataGridViewTextBoxColumn scPriceCol;
-		private System.Windows.Forms.DataGridViewTextBoxColumn scRarityCol;
-		private System.Windows.Forms.DataGridViewTextBoxColumn scDescriptionCol;
-		private System.Windows.Forms.DataGridViewTextBoxColumn scWeightCol;
-		private System.Windows.Forms.DataGridViewTextBoxColumn scTypeCol;
-		private System.Windows.Forms.DataGridViewTextBoxColumn scRefCol;
 		private System.Windows.Forms.MenuStrip menuStrip1;
-		private System.Windows.Forms.ToolStripMenuItem openXMLFileMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem generateShopMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem editXMLFileMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem fileMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem aboutMenuItem;
-		private System.Windows.Forms.DataGridViewButtonColumn storeBuyCol;
-		private System.Windows.Forms.DataGridViewTextBoxColumn storeQuantityCol;
-		private System.Windows.Forms.DataGridViewLinkColumn storeItemNameCol;
-		private System.Windows.Forms.DataGridViewTextBoxColumn storePriceCol;
-		private System.Windows.Forms.DataGridViewTextBoxColumn storeRarityCol;
-		private System.Windows.Forms.DataGridViewTextBoxColumn storeDescriptionCol;
-		private System.Windows.Forms.DataGridViewTextBoxColumn storeWeightCol;
-		private System.Windows.Forms.DataGridViewTextBoxColumn storeTypeCol;
-		private System.Windows.Forms.DataGridViewTextBoxColumn storeRefCol;
-		private System.Windows.Forms.Label disabledLabel2;
 		private System.Windows.Forms.Panel disabledPanel;
 		private System.Windows.Forms.Panel disabledPanel2;
 		private System.Windows.Forms.Label disabledLabel4;
@@ -601,6 +689,39 @@
 		private System.Windows.Forms.CheckBox randomizePricesCheckBox;
 		private System.Windows.Forms.Label shopPricingLevelLabel;
 		private System.Windows.Forms.ComboBox shopPricingLevel;
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.ToolStripMenuItem openStoreArchetypeXMLFileToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem saveThisGeneratedStoreToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+		private System.Windows.Forms.Label storeNameLabel;
+		private System.Windows.Forms.DataGridViewButtonColumn scReturnCol;
+		private System.Windows.Forms.DataGridViewTextBoxColumn scQuantityCol;
+		private System.Windows.Forms.DataGridViewLinkColumn scItemNameCol;
+		private System.Windows.Forms.DataGridViewTextBoxColumn scPriceCol;
+		private System.Windows.Forms.DataGridViewTextBoxColumn scRarityCol;
+		private System.Windows.Forms.DataGridViewTextBoxColumn scDescriptionCol;
+		private System.Windows.Forms.DataGridViewTextBoxColumn scWeightCol;
+		private System.Windows.Forms.DataGridViewTextBoxColumn scTypeCol;
+		private System.Windows.Forms.DataGridViewTextBoxColumn scRefCol;
+		private System.Windows.Forms.ToolStripMenuItem editXMLFileToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem generateToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem storeNameToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem randomStoreNameToolStripMenuItem1;
+		private System.Windows.Forms.ToolStripMenuItem uniqueStoreNameToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem storeInventoryToolStripMenuItem;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+		private System.Windows.Forms.ToolStripMenuItem loadPreGeneratedStoreToolStripMenuItem;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+		private System.Windows.Forms.DataGridViewButtonColumn storeBuyCol;
+		private System.Windows.Forms.DataGridViewTextBoxColumn storeQuantityCol;
+		private System.Windows.Forms.DataGridViewLinkColumn storeItemNameCol;
+		private System.Windows.Forms.DataGridViewTextBoxColumn storePriceCol;
+		private System.Windows.Forms.DataGridViewTextBoxColumn storeRarityCol;
+		private System.Windows.Forms.DataGridViewTextBoxColumn storeDescriptionCol;
+		private System.Windows.Forms.DataGridViewTextBoxColumn storeWeightCol;
+		private System.Windows.Forms.DataGridViewTextBoxColumn storeTypeCol;
+		private System.Windows.Forms.DataGridViewTextBoxColumn storeRefCol;
 	}
 }
 

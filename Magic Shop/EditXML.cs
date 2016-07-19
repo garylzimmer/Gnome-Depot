@@ -18,9 +18,7 @@ namespace Magic_Shop
 		}
 
 		string origWindowTitle;
-
-		public string sFileName = "";
-
+		string editFileName;
 		public void openToEditXML()
 		{
 			
@@ -30,11 +28,11 @@ namespace Magic_Shop
 			if (openToEditXMLDialog.ShowDialog() == DialogResult.OK)
 			{
 				editDataSet.Clear();
-				sFileName = openToEditXMLDialog.FileName;
-				this.Text = origWindowTitle + " - " + sFileName;
+				string editFileName = openToEditXMLDialog.FileName;
+				this.Text = origWindowTitle + " - " + editFileName;
 				try
 				{
-					editDataSet.ReadXml(sFileName);
+					editDataSet.ReadXml(editFileName);
 				}
 				catch(Exception e)
 				{
@@ -91,6 +89,35 @@ namespace Magic_Shop
 		private void EditXML_Load(object sender, EventArgs e)
 		{
 			origWindowTitle = this.Text;
+			editFileName = MainWindow.sFileName;
+			if(string.IsNullOrEmpty(editFileName))
+			{
+				return;
+			}
+			else
+			{
+				this.Text = origWindowTitle + " - " + editFileName;
+				try
+				{
+					editDataSet.ReadXml(editFileName);
+				}
+				catch (Exception f)
+				{
+					MessageBox.Show("Problem reading XML file, probably malformed. \n Details: \n" + f);
+				}
+				editDGV.AutoGenerateColumns = true;
+				editDGV.DataSource = editDataSet;
+				editDGV.DataMember = "item";
+				editDGV.AllowUserToAddRows = true;
+				editDGV.AllowUserToDeleteRows = true;
+				this.Activate();
+			}
+			  
+		}
+
+		private void newXMLFileToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			MessageBox.Show("Not yet implemented");
 		}
 	}
 }
