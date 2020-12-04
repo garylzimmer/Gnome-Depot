@@ -1,4 +1,5 @@
 # Gnome Depot
+See screenshots here: https://garylzimmer.github.io/Gnome-Depot/
 A item shop management tool designed for use in tabletop games.
 Since it's written in C#, Requires Windows and Newest .Net Framework!
 For the latest binary file, click "releases"
